@@ -1,0 +1,114 @@
+@charset "UTF-8";
+@media screen and (min-width: 320px) {
+    html {
+        font-size: 88.88889px;
+    }
+}
+
+@media screen and (min-width: 360px) {
+    html {
+        font-size: 100px;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    html {
+        font-size: 104.16667px;
+    }
+}
+
+@media screen and (min-width: 384px) {
+    html {
+        font-size: 106.66667px;
+    }
+}
+
+@media screen and (min-width: 411px) {
+    html {
+        font-size: 114.16667px;
+    }
+}
+
+@media screen and (min-width: 412px) {
+    html {
+        font-size: 114.44444px;
+    }
+}
+
+@media screen and (min-width: 414px) {
+    html {
+        font-size: 115px;
+    }
+}
+
+@media screen and (min-width: 435px) {
+    html {
+        font-size: 120.83333px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    html {
+        font-size: 166.66667px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 213.33333px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    html {
+        font-size: 222.22222px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    html {
+        font-size: 355.55556px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    html {
+        font-size: 444.44444px;
+    }
+}
+
+body, h1, h2, h3, h4, h5, h6, p, span, img {
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    text-align: center;
+    height: 0.48rem;
+    line-height: 0.48rem;
+    color: white;
+    background: #222222;
+    font-size: 0.18rem;
+    font-weight: 500;
+}
+
+.content {
+    position: fixed;
+    top: 0.5rem;
+    text-align: center;
+}
+
+.content p {
+    width: 3.36rem;
+    height: 0.7rem;
+    top: 1.2rem;
+    display: block;
+    font-size: 0.16rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}

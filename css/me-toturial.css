@@ -1,0 +1,220 @@
+@charset "UTF-8";
+@media screen and (min-width: 320px) {
+    html {
+        font-size: 88.88889px;
+    }
+}
+
+@media screen and (min-width: 360px) {
+    html {
+        font-size: 100px;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    html {
+        font-size: 104.16667px;
+    }
+}
+
+@media screen and (min-width: 384px) {
+    html {
+        font-size: 106.66667px;
+    }
+}
+
+@media screen and (min-width: 411px) {
+    html {
+        font-size: 114.16667px;
+    }
+}
+
+@media screen and (min-width: 412px) {
+    html {
+        font-size: 114.44444px;
+    }
+}
+
+@media screen and (min-width: 414px) {
+    html {
+        font-size: 115px;
+    }
+}
+
+@media screen and (min-width: 435px) {
+    html {
+        font-size: 120.83333px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    html {
+        font-size: 166.66667px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 213.33333px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    html {
+        font-size: 222.22222px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    html {
+        font-size: 355.55556px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    html {
+        font-size: 444.44444px;
+    }
+}
+
+body, h1, h2, h3, h4, h5, h6, p, span, img {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-size: 14px;
+    color: #adadad;
+    font-family: '微软雅黑', 'Arial', sans-serif;
+}
+
+ul, li {
+    list-style: none;
+}
+
+img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    text-align: center;
+    height: 0.48rem;
+    line-height: 0.48rem;
+    color: white;
+    background: #222222;
+    font-size: 0.18rem;
+    font-weight: 500;
+}
+
+
+
+.content {
+    position: fixed;
+    top: 0.5rem;
+    margin-bottom: 0.44rem;
+    font-weight: 500;
+    color: #4E4E4E;
+    width: 100%;
+    height: auto;
+    background: #F7F7F7;
+    position: relative;
+    overflow: hidden;
+}
+
+.content img {
+    top: -1rem;
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+}
+
+.content span {
+    display: block;
+    height: 0.16rem;
+    font-size: 0.16rem;
+    top: 0.1rem;
+    width: 2.8rem;
+    overflow: hidden;
+    text-align: center;
+    line-height: 0.16rem;
+    text-overflow: ellipsis;
+}
+
+.content p {
+    width: 3.36rem;
+    height: 0.7rem;
+    top: 1.2rem;
+    display: block;
+    font-size: 0.16rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item {
+    width: auto;
+    height: auto;
+    margin: 5px;
+    border: 0.01rem solid #aaaaaa;
+}
+
+.item-video {
+    height: auto;
+    width: 96%;
+    margin: auto;
+    margin-top: 5px;
+    text-align: center;
+    border: 0.01rem solid #aaaaaa;
+}
+
+.item-video img{
+    height: 1.5rem;
+    width: 100%;
+}
+
+
+.item-title {
+    height: 0.4rem;
+    width: 96%;
+    margin: auto;
+}
+
+.down {
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+    width: 100%;
+    height: 0.44rem;
+    background: #ffffff;
+    top: auto;
+    margin: auto;
+    /*border: 0.01rem solid #00A0E9;*/
+    text-align: center;
+    /*line-height: 0.44rem;*/
+    /*font-size: 0.16rem;*/
+}
+
+.down .show{
+    width: 96%;
+    height: 80%;
+    top: 0.05rem;
+    margin: auto;
+    margin-top: 0.03rem;
+    text-align: center;
+    border: 0.01rem solid #00A0E9;
+    line-height: 0.44rem;
+    font-size: 0.16rem;
+}
+
+
+.ui-loader-default{ display:none;}
+.ui-mobile-viewport{ border:none;}
+.ui-page {padding: 0; margin: 0; outline: 0}
