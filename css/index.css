@@ -448,13 +448,14 @@ a {
 .s-commodity-desc{
     font-size: .14rem;
 }
+
 .swx-music{
     position:absolute;
     right:10px;
     top:10px;
     z-index:9999;
-    width: 41px;
-    height:40px;
+    width:.2rem;
+    height:.2rem;
 }
 .swx-music{
      -webkit-animation: play 5s linear infinite;
