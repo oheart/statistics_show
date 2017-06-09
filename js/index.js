@@ -151,8 +151,8 @@ $(document).ready(function () {
             myAuto.play();
         }else{
             $('.swx-music').attr('src','/statistics_show/img/music_pause.png');
-            myAuto.pause();
             $('.swx-music').addClass('music-pause');
+            myAuto.pause();
         }
 
     });
