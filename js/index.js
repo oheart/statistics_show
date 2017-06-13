@@ -179,12 +179,24 @@ $(document).ready(function () {
         }
 
     });
-
+    var firstSeeHtml = '  <div class="pinch-zoom">' +
+        '<div class="img full-view-pic-box">'  +
+        '<!-- <span class="yuantu">退底图</span> -->' +
+        '<div class="threesixty product1">'  +
+        '<div class="spinner">' +
+        '<span>0%</span>' +
+        '</div>' +
+        '<ol class="threesixty_images"></ol>' +
+        '</div>' +
+        '</div>' +
+        '</div>';
+    $('.first-see-pic-box').append(firstSeeHtml);
     //点击热点
     var ifOpenHotFlag = false;
     $('.swx-hot-spots').click(function(){
         ifOpenHotFlag = !ifOpenHotFlag;
         if(ifOpenHotFlag){
+            $('.first-see-pic-box').empty();
             $('.first-see-pics-desc').hide();
             $('.full-view-pic-box').hide();
             $('.swx-hot-area').show();
@@ -204,6 +216,8 @@ $(document).ready(function () {
                 autoplayDisableOnInteraction : false,
             });
         }else{
+            showImagesFromLocalJson('data/example.json');
+            $('.first-see-pic-box').append(firstSeeHtml);
             $('.first-see-pics-desc').show();
             $('.full-view-pic-box').show();
             $('.swx-hot-area').hide();
