@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    var fullViewPicData;
     function showImagesWithId(workId){
         var url = 'http://123.57.3.33:9000/api/work/id/' + workId;
         $.get(url, function(data){
@@ -129,6 +130,7 @@ $(document).ready(function () {
                 alert("作品不存在");
             } else {
                 processJsonData(data.data);
+                fullViewPicData = data.data;
             }
         });
     }
@@ -136,8 +138,28 @@ $(document).ready(function () {
     showImagesFromLocalJson('data/example.json');
 
 
+    //全屏滚动
+    $('#statistic-show-container').fullpage(
+        {
+            scrollOverflow: true,
+           /* afterRender: function (anchorLink, index) {
+                console.log(index);
+            },*/
+            /*onLeave: function(index, nextIndex, direction){
+                console.log(index);
+                console.log(nextIndex);
+                if(index == 1){
+                    $('.swx-barrage').show();
+                    $('.swx-hot-spots').show();
+                }else{
+                    $('.swx-barrage').hide();
+                    $('.swx-hot-spots').hide();
+                }
+            }*/
+        }
+    )
 
-    $('#statistic-show-container').fullpage();
+
 
 
     //初始化时播放音乐
@@ -156,5 +178,36 @@ $(document).ready(function () {
             myAuto.pause();
         }
 
+    });
+
+    //点击热点
+    var ifOpenHotFlag = false;
+    $('.swx-hot-spots').click(function(){
+        ifOpenHotFlag = !ifOpenHotFlag;
+        if(ifOpenHotFlag){
+            $('.first-see-pics-desc').hide();
+            $('.full-view-pic-box').hide();
+            $('.swx-hot-area').show();
+            $('.swx-hot-spots').attr('src','/statistics_show/img/hot_on.png');
+            console.log('热带');
+            for (var i=0; i< fullViewPicData.picUrls.length; i++) {
+                var html = '<div class="swiper-slide">' +
+                    '<img src="'+ fullViewPicData.picUrls[i] +'" class="active-hot-pics"/>' +
+                        '<div class="fullview-pic-desc">'+ (fullViewPicData.picTags[i] || '无') +'</div>'
+                    '</div>';
+                if(i <= 3){
+                    $('.swiper-wrapper').append(html);
+                }
+            }
+            var swiper = new Swiper('.swiper-container',{
+                autoplay : 2000,
+                autoplayDisableOnInteraction : false,
+            });
+        }else{
+            $('.first-see-pics-desc').show();
+            $('.full-view-pic-box').show();
+            $('.swx-hot-area').hide();
+            $('.swx-hot-spots').attr('src','/statistics_show/img/hot_off.png');
+        }
     });
 });
