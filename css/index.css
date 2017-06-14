@@ -551,7 +551,7 @@ a {
     position:absolute;
     right:10px;
     top:.5rem;
-    z-index:9999;
+    z-index:99999;
     width:.25rem;
     height:.25rem;
 }
@@ -636,6 +636,7 @@ a {
     left:5%;
     top: 2%;
     color:#000;
+    z-index:1000;
 }
 .zpg-barrage-content{
     text-align: center;
