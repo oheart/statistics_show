@@ -142,26 +142,35 @@ $(document).ready(function () {
     $('#statistic-show-container').fullpage(
         {
             scrollOverflow: true,
-           /* afterRender: function (anchorLink, index) {
-                console.log(index);
-            },*/
-            /*onLeave: function(index, nextIndex, direction){
-                console.log(index);
-                console.log(nextIndex);
-                if(index == 1){
-                    $('.swx-barrage').show();
-                    $('.swx-hot-spots').show();
+            anchors: ['page1', 'page2'],
+            afterRender: function (anchorLink, index) {
+                var dmHotHtml = ' <img src="img/barrage.png" class="swx-barrage"/>' +
+                                 '<img src="img/hot_off.png" class="swx-hot-spots"/>';
+                var perPageAnchor = $('.section').data('anchor');
+                console.log(perPageAnchor);
+                if(perPageAnchor == 'page1'){
+                    $('.zpg-other-container').append(dmHotHtml);
                 }else{
-                    $('.swx-barrage').hide();
-                    $('.swx-hot-spots').hide();
+                    $('.swx-barrage').remove();
+                    $('.swx-hot-spots').remove();
                 }
-            }*/
+            },
+            afterLoad:function(){
+                var dmHotHtml = ' <img src="img/barrage.png" class="swx-barrage"/>' +
+                    '<img src="img/hot_off.png" class="swx-hot-spots"/>';
+                var perPageAnchor = $('.section').data('anchor');
+                console.log(perPageAnchor);
+                if(perPageAnchor == 'page1'){
+                    $('.zpg-other-container').append(dmHotHtml);
+                }else{
+                    $('.swx-barrage').remove();
+                    $('.swx-hot-spots').remove();
+                }
+            }
         }
     )
 
-
-
-
+    //console.log($('.section').data('anchor'));
     //初始化时播放音乐
     var myAuto = document.getElementById('audio');
     myAuto.play();
@@ -179,6 +188,21 @@ $(document).ready(function () {
         }
 
     });
+
+    //点击弹幕
+    var ifOpenBarrageFlag = false;
+    $('.swx-barrage').click(function(){
+        ifOpenBarrageFlag = !ifOpenBarrageFlag;
+        if(ifOpenBarrageFlag){
+            $('.zpg-barrage-container').show();
+            $('.swx-barrage').attr('src','/statistics_show/img/barrage_open.png');
+        }else{
+            $('.zpg-barrage-container').hide();
+            $('.swx-barrage').attr('src','/statistics_show/img/barrage.png');
+        }
+    });
+
+
     var firstSeeHtml = '  <div class="pinch-zoom">' +
         '<div class="img full-view-pic-box">'  +
         '<!-- <span class="yuantu">退底图</span> -->' +
@@ -203,6 +227,7 @@ $(document).ready(function () {
             $('.swx-hot-spots').attr('src','/statistics_show/img/hot_on.png');
             console.log('热带');
             for (var i=0; i< fullViewPicData.picUrls.length; i++) {
+
                 var html = '<div class="swiper-slide">' +
                     '<img src="'+ fullViewPicData.picUrls[i] +'" class="active-hot-pics"/>' +
                         '<div class="fullview-pic-desc">'+ (fullViewPicData.picTags[i] || '无') +'</div>'
