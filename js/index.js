@@ -142,31 +142,6 @@ $(document).ready(function () {
     $('#statistic-show-container').fullpage(
         {
             scrollOverflow: true,
-            anchors: ['page1', 'page2'],
-            afterRender: function (anchorLink, index) {
-                var dmHotHtml = ' <img src="img/barrage.png" class="swx-barrage"/>' +
-                                 '<img src="img/hot_off.png" class="swx-hot-spots"/>';
-                var perPageAnchor = $('.section').data('anchor');
-                console.log(perPageAnchor);
-                if(perPageAnchor == 'page1'){
-                    $('.zpg-other-container').append(dmHotHtml);
-                }else{
-                    $('.swx-barrage').remove();
-                    $('.swx-hot-spots').remove();
-                }
-            },
-            afterLoad:function(){
-                var dmHotHtml = ' <img src="img/barrage.png" class="swx-barrage"/>' +
-                    '<img src="img/hot_off.png" class="swx-hot-spots"/>';
-                var perPageAnchor = $('.section').data('anchor');
-                console.log(perPageAnchor);
-                if(perPageAnchor == 'page1'){
-                    $('.zpg-other-container').append(dmHotHtml);
-                }else{
-                    $('.swx-barrage').remove();
-                    $('.swx-hot-spots').remove();
-                }
-            }
         }
     )
 
