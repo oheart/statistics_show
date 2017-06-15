@@ -77,6 +77,10 @@
     }
 }
 
+html,body{
+   /* width: 100%;
+    height:100%;*/
+}
 body, h1, h2, h3, h4, h5, h6, p, span, img {
     margin: 0;
     padding: 0;
@@ -131,6 +135,7 @@ a {
     z-index: 1;
     position: relative;
     border-bottom: 0.01rem solid #dcdcdc;
+    height:70%;
     /*height: 3.6rem;*/
     /*overflow: hidden;*/
 }
@@ -166,10 +171,10 @@ a {
     /*top: .2rem;
     left: .2rem;*/
     /*z-index: 9999;*/
-    width: .61rem;
-    height: .28rem;
-    background: url("../img/360.png")no-repeat 100% 100%;
-    background-size: .61rem .28rem;
+    width: .4rem;
+    height: .24rem;
+    background: url(../img/360.png)no-repeat 100% 100%;
+    background-size: .4rem .24rem;
     margin: .04rem 0 0 .04rem;
 }
 .pictrue .img img {
@@ -437,14 +442,15 @@ a {
 }
 .statistics-commodity-detail{
     width: 76%;
-    margin: 12% auto 0;
+    margin: 10% auto 0;
     /*border: 1px solid #E7E7E7;*/
     color:#000;
-    padding:20px;
+    /*padding:20px;*/
     max-height:76%;
     overflow-y: auto!important;
     overflow-x: hidden!important;
     /*position: relative;*/
+    -webkit-overflow-scrolling : auto;  /* liuhx:可以把这整行注释掉对比差别 */
 }
 .statistics-commodity-detail p{
     margin-bottom: .06rem;
@@ -522,11 +528,11 @@ a {
     text-align: center;
 }
 .next-page-icon{
-    width: 60px;
-    height:40px;
+    width: .36rem;
+    height: auto;
 }
-.animated-infinite {
-    animation: nextpage 2.6s infinite;
+.animated-infinite{
+    animation: nextpage 5s infinite;
     position: absolute;
     bottom:0;
     left: 50%;
@@ -538,14 +544,14 @@ a {
 
 @keyframes nextpage
 {
-    from {bottom:0px;opacity:1;}
-    to {bottom:30px;opacity:0;}
+    from {bottom:0;opacity:1;}
+    to {bottom:5%;opacity:0;}
 }
 
 @-webkit-keyframes mymove /*Safari and Chrome*/
 {
-    from {bottom:0px;opacity:1;}
-    to {bottom:30px;opacity:0;}
+    from {bottom:0;opacity:1;}
+    to {bottom:5%;opacity:0;}
 }
 .swx-barrage{
     position:absolute;

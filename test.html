@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head lang="ch">
+    <meta charset="UTF-8">
+    <meta name=”viewport” content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title></title>
+    <style>
+        body, html{
+            padding: 0;
+            margin: 0;
+        }
+
+        body, html {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #container, .section {
+            height: 100%;
+        }
+
+        .section {
+            background-color: #000;
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+
+        #section0 {
+            background-color: #83af9b;
+        }
+
+        #section1 {
+            background-color: #764d39;
+        }
+
+        #section2 {
+            background-color: #ff9000;
+        }
+
+        #section3 {
+            background-color: #380d31;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="section" id="section0"></div>
+    <div class="section" id="section1"></div>
+    <div class="section" id="section2"></div>
+    <div class="section" id="section3"></div>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    var curIndex = 0;
+    var container = $("#container");
+    var sumCount = $(".section").length;
+    var $window = $(window);
+    var duration = 500;
+    //时间控制
+    var aniTime = 0;
+
+    var scrollFunc = function (e) {
+        //如果动画还没执行完，则return
+        if(new Date().getTime() < aniTime + duration){
+            return;
+        }
+        e = e || window.event;
+        var t = 0;
+        if (e.wheelDelta) {//IE/Opera/Chrome
+            t = e.wheelDelta;
+            if (t > 0 && curIndex > 0) {
+                //上滚动
+                movePrev();
+            } else if (t < 0 && curIndex < sumCount - 1) {
+                //下滚动
+                moveNext();
+            }
+        } else if (e.detail) {//Firefox
+            t = e.detail;
+            if (t < 0 && curIndex > 0) {
+                //上滚动
+                movePrev();
+            } else if (t > 0 && curIndex < sumCount - 1) {
+                //下滚动
+                moveNext();
+            }
+        }
+    };
+
+    function moveNext(){
+        //获取动画开始时的时间
+        aniTime = new Date().getTime();
+        container.css("transform", "translate3D(0, -" + (++curIndex) * $window.height() + "px, 0)");
+    }
+
+    function movePrev(){
+        //获取动画开始时的时间
+        aniTime = new Date().getTime();
+        container.css("transform", "translate3D(0, -" + (--curIndex) * $window.height() + "px, 0)");
+    }
+
+    function init(){
+        /*注册事件*/
+        if (document.addEventListener) {
+            document.addEventListener('DOMMouseScroll', scrollFunc, false);
+        }//W3C
+        window.onmousewheel = document.onmousewheel = scrollFunc;//IE/Opera/Chrome
+
+        container.css({
+            "transition": "all 0.5s",
+            "-moz-transition": "all 0.5s",
+            "-webkit-transition": "all 0.5s"
+        });
+    }
+
+    init();
+</script>
+</body>
+</html>

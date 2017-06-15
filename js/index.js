@@ -1,6 +1,4 @@
 $(document).ready(function () {
-
-    var fullViewPicData;
     function showImagesWithId(workId){
         var url = 'http://123.57.3.33:9000/api/work/id/' + workId;
         $.get(url, function(data){
@@ -25,7 +23,7 @@ $(document).ready(function () {
         return true;
     }
 
-    function processJsonData(jsonData){
+    function processJsonData(jsonData,limit){
         if (jsonData.title!=null) {
             $(".goods_name").text(jsonData.title);
         }
@@ -53,10 +51,18 @@ $(document).ready(function () {
         //pic list
         if (jsonData.picUrls!=null){
             var imgArray = new Array();
-            for (var i=0; i<jsonData.picUrls.length; i++) {
-                //imgArray.push('http://123.57.3.33:9000/pic/work/'+jsonData.picUrls[i]);
-                imgArray.push(jsonData.picUrls[i]);
+            if(limit){
+                for (var i=0; i<jsonData.picUrls2.length; i++) {
+                    //imgArray.push('http://123.57.3.33:9000/pic/work/'+jsonData.picUrls[i]);
+                    imgArray.push(jsonData.picUrls2[i]);
+                }
+            }else{
+                for (var i=0; i<jsonData.picUrls.length; i++) {
+                    //imgArray.push('http://123.57.3.33:9000/pic/work/'+jsonData.picUrls[i]);
+                    imgArray.push(jsonData.picUrls[i]);
+                }
             }
+
             var descList = new Array();
             //旋转图片跟随简介
             if (!isEmpty(jsonData.picTags)){
@@ -123,14 +129,13 @@ $(document).ready(function () {
     }
 
 
-    function showImagesFromLocalJson(jsonFile){
+    function showImagesFromLocalJson(jsonFile,limit){
         $.getJSON(jsonFile, function(data){
             if (data.code!=0) {
                 console.log("code: "+data.code);
                 alert("作品不存在");
             } else {
-                processJsonData(data.data);
-                fullViewPicData = data.data;
+                processJsonData(data.data,limit);
             }
         });
     }
@@ -140,12 +145,11 @@ $(document).ready(function () {
 
     //全屏滚动
     $('#statistic-show-container').fullpage(
-        {
+       /* {
             scrollOverflow: true,
-        }
+        }*/
     )
 
-    //console.log($('.section').data('anchor'));
     //初始化时播放音乐
     var myAuto = document.getElementById('audio');
     myAuto.play();
@@ -178,49 +182,14 @@ $(document).ready(function () {
     });
 
 
-    var firstSeeHtml = '  <div class="pinch-zoom">' +
-        '<div class="img full-view-pic-box">'  +
-        '<!-- <span class="yuantu">退底图</span> -->' +
-        '<div class="threesixty product1">'  +
-        '<div class="spinner">' +
-        '<span>0%</span>' +
-        '</div>' +
-        '<ol class="threesixty_images"></ol>' +
-        '</div>' +
-        '</div>' +
-        '</div>';
-    $('.first-see-pic-box').append(firstSeeHtml);
     //点击热点
     var ifOpenHotFlag = false;
     $('.swx-hot-spots').click(function(){
         ifOpenHotFlag = !ifOpenHotFlag;
         if(ifOpenHotFlag){
-            $('.first-see-pic-box').empty();
-            $('.first-see-pics-desc').hide();
-            $('.full-view-pic-box').hide();
-            $('.swx-hot-area').show();
             $('.swx-hot-spots').attr('src','/statistics_show/img/hot_on.png');
-            console.log('热带');
-            for (var i=0; i< fullViewPicData.picUrls.length; i++) {
-
-                var html = '<div class="swiper-slide">' +
-                    '<img src="'+ fullViewPicData.picUrls[i] +'" class="active-hot-pics"/>' +
-                        '<div class="fullview-pic-desc">'+ (fullViewPicData.picTags[i] || '无') +'</div>'
-                    '</div>';
-                if(i <= 3){
-                    $('.swiper-wrapper').append(html);
-                }
-            }
-            var swiper = new Swiper('.swiper-container',{
-                autoplay : 2000,
-                autoplayDisableOnInteraction : false,
-            });
+            showImagesFromLocalJson('data/example.json',true);
         }else{
-            showImagesFromLocalJson('data/example.json');
-            $('.first-see-pic-box').append(firstSeeHtml);
-            $('.first-see-pics-desc').show();
-            $('.full-view-pic-box').show();
-            $('.swx-hot-area').hide();
             $('.swx-hot-spots').attr('src','/statistics_show/img/hot_off.png');
         }
     });

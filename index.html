@@ -29,9 +29,9 @@
     <script src="js/threesixty.min.js"></script>
     <script src="js/jquery.mobile-1.4.5.min.js"></script>
     <script src="js/jquery.fullPage.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery.touchswipe/1.6.15/jquery.touchSwipe.min.js"></script>
     <script src="js/pinchzoom.min.js"></script>
-    <!-- 如果 scrollOverflow 设置为 true，则需要引入 jquery.slimscroll.min.js，一般情况下不需要 -->
-    <script src="js/jquery.slimscroll.min.js"></script>
+    <script src="js/landscape.js"></script>
     <script src='js/scroll.js'></script>
     <script src="js/swiper-3.4.2.min.js"></script>
     <script src="js/index.js"></script>
@@ -53,9 +53,9 @@
             <div class="full-cover-pic">
                 <div class="first-see-pic-box">
                 </div>
-                <!--  <div class="pinch-zoom">
+                  <div class="pinch-zoom">
                       <div class="img full-view-pic-box">
-                          &lt;!&ndash; <span class="yuantu">退底图</span> &ndash;&gt;
+                          <!-- <span class="yuantu">退底图</span> -->
                           <div class="threesixty product1">
                               <div class="spinner">
                                   <span>0%</span>
@@ -63,15 +63,15 @@
                               <ol class="threesixty_images"></ol>
                           </div>
                       </div>
-                  </div>-->
+                  </div>
                 <div class="img_desc first-see-pics-desc"></div>
             </div>
-            <div class="swx-hot-area" style="display:none;">
+           <!-- <div class="swx-hot-area" style="display:none;">
                 <div class="swiper-container">
                     <div class="swiper-wrapper zpg-hot-area">
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
         <!--<div class="img_desc first-see-pics-desc"></div>-->
         <div class="goods_buy">
@@ -91,6 +91,7 @@
         </div>
         <img src="img/barrage.png" class="swx-barrage"/>
         <img src="img/hot_off.png" class="swx-hot-spots"/>
+        <!--弹幕部分-->
         <div class="zpg-barrage-container" style="display:none;">
             <div class="zpg-barrage-content">
                 <div class="mb5">
@@ -120,6 +121,7 @@
             &lt;!&ndash; <a href="#">下载三围秀</a> &ndash;&gt;
         </div>-->
     </div>
+    <!--商品介绍部分-->
     <div class="section statistics-commodity-detail-box">
         <div class="statistics-commodity-detail scrollable">
             <p>
@@ -230,6 +232,5 @@
     <audio id="audio" src="img/bg.mp3"
            style="opacity:0" preload="auto" controls loop hidden="true"/>
 </div>
-
 </body>
 </html>
