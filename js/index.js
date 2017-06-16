@@ -66,6 +66,7 @@ $(document).ready(function () {
             }
 
             var descList = new Array();
+
             //旋转图片跟随简介-非热点
             if (!isEmpty(jsonData.picTags) && !limitFlag){
                 descList = [];
@@ -94,6 +95,7 @@ $(document).ready(function () {
                 }
 
             }
+
             //旋转图片跟随简介-热点
             if (!isEmpty(jsonData.hotPicTags) && limitFlag){
                 descList = [];
@@ -171,7 +173,7 @@ $(document).ready(function () {
         });
     }
 
-    showImagesFromLocalJson('data/example.json');
+    showImagesFromLocalJson('data/example.json',false);
 
 
     //全屏滚动
