@@ -26,6 +26,8 @@
 }
 .threesixty .threesixty_images img.current-image {
   visibility: visible;
+ /*todo 为了让图片放大暂时这么做*/
+  transform:scale(1.4);
   /*
            Do not put here any other styles.
            It causes massive recalc / repaints and image flickering,

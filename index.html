@@ -23,8 +23,6 @@
     <link rel="stylesheet" href="css/threesixty.css"/>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/jquery.fullPage.css">
-    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
-    <!--<script src='js/jquery-3.1.1.min.js'></script>-->
     <script src='js/jquery3.0.1.min.js'></script>
     <script src="js/threesixty.min.js"></script>
     <script src="js/jquery.mobile-1.4.5.min.js"></script>
@@ -32,8 +30,7 @@
     <script src="http://cdn.bootcss.com/jquery.touchswipe/1.6.15/jquery.touchSwipe.min.js"></script>
     <script src="js/pinchzoom.min.js"></script>
     <script src="js/landscape.js"></script>
-    <script src='js/scroll.js'></script>
-    <script src="js/swiper-3.4.2.min.js"></script>
+    <!--<script src='js/scroll.js'></script>-->
     <script src="js/index.js"></script>
     <script type="text/javascript">
     //手势缩放图片
@@ -123,92 +120,98 @@
     </div>
     <!--商品介绍部分-->
     <div class="section statistics-commodity-detail-box">
-        <div class="statistics-commodity-detail scrollable">
-            <p>
-                <span  class="s-commodity-tit">品牌：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">款式：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">钻石净度：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">副钻分数：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">副钻切工：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">镶嵌方式：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">镶嵌材质：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">颜色：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">规格：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">适用对象：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">鉴定标识：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">鉴定类别：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">是否商场同款：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">上市时间：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">发行编号：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">货号：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">售后服务：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">货号：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">售后服务：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">货号：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-            <p>
-                <span  class="s-commodity-tit">售后服务：</span>
-                <span  class="s-commodity-desc">亮相于</span>
-            </p>
-        </div>
+        <!--商品详情部分-->
+        <div class="statistics-commodity-detail-table"></div>
+        <!--<div class="statistics-commodity-detail">
+            <table border="0" cellpadding="0" cellspacing="0" bgcolor="#98989A" class="product-detail-table">
+                <thead>
+                    <tr class="product-detail-tr">
+                        <th  class="spec-product-bg" style="width:25%;">参数</th>
+                        <th  style="width:25%;">单位</th>
+                        <th  style="width:25%;">平板灯</th>
+                        <th  style="width:25%;">环形灯</th>
+                        <th  style="width:25%;">可调摄影灯箱</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr  class="product-detail-tr">
+                        <td  class="spec-product-bg" style="width:25%;">输入电压</th>
+                        <td>VDC</td>
+                        <td>24</td>
+                        <td>24</td>
+                        <td>110-22VAC50/60hz</td>
+                    </tr>
+                    <tr  class="product-detail-tr">
+                        <td  class="spec-product-bg" style="width:25%;">输入电流</th>
+                        <td>A</td>
+                        <td>0.6</td>
+                        <td>1.2</td>
+                        <td>1.67Aac</td>
+                    </tr>
+                    <tr  class="product-detail-tr">
+                        <td  class="spec-product-bg" style="width:25%;">额定功率</th>
+                        <td>W</td>
+                        <td>15</td>
+                        <td>28</td>
+                        <td>160</td>
+                    </tr>
+                    <tr  class="product-detail-tr">
+                        <td class="spec-product-bg"  style="width:25%;">色温</th>
+                        <td>CCT.</td>
+                        <td>5400</td>
+                        <td>5400</td>
+                        <td>/</td>
+                    </tr>
+                    <tr  class="product-detail-tr">
+                        <td  class="spec-product-bg" style="width:25%;">显指</th>
+                        <td>Ra</td>
+                        <td>80</td>
+                        <td>82</td>
+                        <td>/</td>
+                    </tr>
+                    <tr  class="product-detail-tr">
+                        <td  class="spec-product-bg" style="width:25%;">光通量</th>
+                        <td>Lm</td>
+                        <td>1600</td>
+                        <td>3200</td>
+                        <td>/</td>
+                    </tr>
+                    <tr  class="product-detail-tr">
+                        <td  class="spec-product-bg" style="width:25%;">工作温度</th>
+                        <td>℃</td>
+                        <td  colspan="3">-20℃-+45℃</td>
+                    </tr>
+                    <tr  class="product-detail-tr">
+                        <td  class="spec-product-bg" style="width:25%;">存储温度</th>
+                        <td>℃<</td>
+                        <td colspan="3">-20℃-+60℃</td>
+                    </tr>
+                    <tr  class="product-detail-tr">
+                        <td  class="spec-product-bg" style="width:25%;">外形尺寸</th>
+                        <td>mm</td>
+                        <td>365*375*10</td>
+                        <td>300*25</td>
+                        <td>400*400*200</td>
+                    </tr>
+                    <tr  class="product-detail-tr">
+                        <td  class="spec-product-bg" style="width:25%;">重量</th>
+                        <td>kg</td>
+                        <td>1.1</td>
+                        <td>1</td>
+                        <td>10</td>
+                    </tr>
+                    <tr  class="product-detail-tr">
+                        <td  class="spec-product-bg" style="width:25%;">功能</th>
+                        <td colspan="4">灯箱底部和侧面发光，灯箱拍物体补充照明</td>
+                    </tr>
+                    <tr>
+                        <td  class="spec-product-bg" style="width:25%;">产品配置</th>
+                        <td  colspan="4">可调节摄影灯箱、全透光转盘、环形灯、扩散板、平板灯、蓝牙触发器、航空插头、可任意变动支架</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>-->
+        <!--加入购物车部分-->
         <div class="statistics-goods-buy clear">
             <div class="buy-pic-icon">
                 <img src="img/shop_cart.png" class="shop-chart-icon"/>
@@ -221,14 +224,11 @@
             </div>
         </div>
     </div>
+
 </div>
-
-
-
+<!--音乐部分-->
 <div class="zpg-other-container">
     <img src="img/music.png" class="swx-music"/>
-    <!--<img src="img/barrage.png" class="swx-barrage"/>
-    <img src="img/hot_off.png" class="swx-hot-spots"/>-->
     <audio id="audio" src="img/bg.mp3"
            style="opacity:0" preload="auto" controls loop hidden="true"/>
 </div>

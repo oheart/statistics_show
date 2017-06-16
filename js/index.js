@@ -23,9 +23,9 @@ $(document).ready(function () {
         return true;
     }
 
-    function processJsonData(jsonData,limit){
+    function processJsonData(jsonData,limitFlag){
         if (jsonData.title!=null) {
-            $(".goods_name").text(jsonData.title);
+            $(".goods_name").html(jsonData.title);
         }
         if (jsonData.desc!=null) {
             $(".goods_item_desc").text(jsonData.desc);
@@ -51,12 +51,14 @@ $(document).ready(function () {
         //pic list
         if (jsonData.picUrls!=null){
             var imgArray = new Array();
-            if(limit){
-                for (var i=0; i<jsonData.picUrls2.length; i++) {
+            if(limitFlag){
+                imgArray = [];
+                for (var i=0; i<jsonData.hotPicUrls.length; i++) {
                     //imgArray.push('http://123.57.3.33:9000/pic/work/'+jsonData.picUrls[i]);
-                    imgArray.push(jsonData.picUrls2[i]);
+                    imgArray.push(jsonData.hotPicUrls[i]);
                 }
             }else{
+                imgArray = [];
                 for (var i=0; i<jsonData.picUrls.length; i++) {
                     //imgArray.push('http://123.57.3.33:9000/pic/work/'+jsonData.picUrls[i]);
                     imgArray.push(jsonData.picUrls[i]);
@@ -64,8 +66,9 @@ $(document).ready(function () {
             }
 
             var descList = new Array();
-            //旋转图片跟随简介
-            if (!isEmpty(jsonData.picTags)){
+            //旋转图片跟随简介-非热点
+            if (!isEmpty(jsonData.picTags) && !limitFlag){
+                descList = [];
                 if(jsonData.picTags.length==0){
                     $(".img_desc").hide();
                 }else{
@@ -88,16 +91,38 @@ $(document).ready(function () {
                             }
                         }
                     }
-                    //console.log(descList);
-                    /*var copies=Math.floor(imgArray.length/jsonData.picTags.length);
-                     for(var i=0;i<jsonData.picTags.length;i++){
-                     for(var j=0;j<copies;j++){
-                     descList.push(jsonData.picTags[i]);
-                     }
-                     }*/
                 }
 
             }
+            //旋转图片跟随简介-热点
+            if (!isEmpty(jsonData.hotPicTags) && limitFlag){
+                descList = [];
+                if(jsonData.hotPicTags.length==0){
+                    $(".img_desc").hide();
+                }else{
+                    $(".img_desc").show();
+                    var index=new Array;
+                    for(key in jsonData.hotPicTags){
+                        index[index.length]=key;
+                    }
+                    if(index.length==1){
+                        descList.push(jsonData.hotPicTags[index[0]]);
+                    }else{
+                        for(var i=1;i<index.length;i++){
+                            for(var j=0;j<parseInt(index[i]-index[i-1]);j++){
+                                descList.push(jsonData.hotPicTags[index[i-1]]);
+                            }
+                        }
+                        if(index[index.length-1]<50){
+                            for(var i=0;i<=50-(index[index.length-1]);i++){
+                                descList.push(jsonData.hotPicTags[index[index.length-1]]);
+                            }
+                        }
+                    }
+                }
+
+            }
+
 
             var totalPicNum = imgArray.length;
             var picHeight = "100%";
@@ -118,8 +143,13 @@ $(document).ready(function () {
                 imgDescList: descList,
                 imgDesc: '.img_desc',
                 framerate: 30,
-                imgArray: imgArray
+                imgArray: imgArray,
+                onReady: function(){
+                    //product_1.play();
+                }
             });
+            //$('.nav_bar_play').trigger('click');
+            //product_1.play();
         }
         if (jsonData.link!=null){
             $(".goods_buy_btn").click(function(){
@@ -129,13 +159,13 @@ $(document).ready(function () {
     }
 
 
-    function showImagesFromLocalJson(jsonFile,limit){
+    function showImagesFromLocalJson(jsonFile,limitFlag){
         $.getJSON(jsonFile, function(data){
             if (data.code!=0) {
                 console.log("code: "+data.code);
                 alert("作品不存在");
             } else {
-                processJsonData(data.data,limit);
+                processJsonData(data.data,limitFlag);
             }
         });
     }
@@ -145,9 +175,9 @@ $(document).ready(function () {
 
     //全屏滚动
     $('#statistic-show-container').fullpage(
-       /* {
+        {
             scrollOverflow: true,
-        }*/
+        }
     )
 
     //初始化时播放音乐
@@ -155,7 +185,8 @@ $(document).ready(function () {
     myAuto.play();
 
     //点击切换音乐播放和暂停效果
-    $('.swx-music').click(function(){
+    $(".swx-music").bind( "tap", tapMusicIcon);
+    function tapMusicIcon(){
         if(myAuto.paused){
             $('.swx-music').attr('src','/statistics_show/img/music.png');
             $('.swx-music').removeClass('music-pause');
@@ -165,12 +196,14 @@ $(document).ready(function () {
             $('.swx-music').addClass('music-pause');
             myAuto.pause();
         }
+    }
 
-    });
+
 
     //点击弹幕
     var ifOpenBarrageFlag = false;
-    $('.swx-barrage').click(function(){
+    $(".swx-barrage").bind( "tap", tapBarrageIcon);
+    function tapBarrageIcon(){
         ifOpenBarrageFlag = !ifOpenBarrageFlag;
         if(ifOpenBarrageFlag){
             $('.zpg-barrage-container').show();
@@ -179,18 +212,22 @@ $(document).ready(function () {
             $('.zpg-barrage-container').hide();
             $('.swx-barrage').attr('src','/statistics_show/img/barrage.png');
         }
-    });
+    }
 
 
     //点击热点
     var ifOpenHotFlag = false;
-    $('.swx-hot-spots').click(function(){
+    $(".swx-hot-spots").bind( "tap", tapHotSpotsIcon);
+    function tapHotSpotsIcon(){
         ifOpenHotFlag = !ifOpenHotFlag;
         if(ifOpenHotFlag){
             $('.swx-hot-spots').attr('src','/statistics_show/img/hot_on.png');
             showImagesFromLocalJson('data/example.json',true);
         }else{
             $('.swx-hot-spots').attr('src','/statistics_show/img/hot_off.png');
+            showImagesFromLocalJson('data/example.json',false);
         }
-    });
+    }
+
+
 });
