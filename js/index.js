@@ -145,7 +145,7 @@ $(document).ready(function () {
                 framerate: 30,
                 imgArray: imgArray,
                 onReady: function(){
-                    //product_1.play();
+                    product_1.play();
                 }
             });
             //$('.nav_bar_play').trigger('click');

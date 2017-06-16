@@ -2,56 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="100ae847-d592-460a-9f9f-11f13c2d93cf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/HOT_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/HOT_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/HOT_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/product_table.png" />
-      <change type="DELETED" beforePath="F:\statistics_show\css\swiper-3.4.2.min.css" afterPath="" />
-      <change type="DELETED" beforePath="F:\statistics_show\js\swiper-3.4.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\statistics_show\js\swiper.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\statistics_show\js\zdyFullPage.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7591.JPG" afterPath="$PROJECT_DIR$/img/IMG_7591.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7592.JPG" afterPath="$PROJECT_DIR$/img/IMG_7592.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7593.JPG" afterPath="$PROJECT_DIR$/img/IMG_7593.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7594.JPG" afterPath="$PROJECT_DIR$/img/IMG_7594.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7595.JPG" afterPath="$PROJECT_DIR$/img/IMG_7595.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7596.JPG" afterPath="$PROJECT_DIR$/img/IMG_7596.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7597.JPG" afterPath="$PROJECT_DIR$/img/IMG_7597.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7598.JPG" afterPath="$PROJECT_DIR$/img/IMG_7598.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7599.JPG" afterPath="$PROJECT_DIR$/img/IMG_7599.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7600.JPG" afterPath="$PROJECT_DIR$/img/IMG_7600.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7601.JPG" afterPath="$PROJECT_DIR$/img/IMG_7601.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7602.JPG" afterPath="$PROJECT_DIR$/img/IMG_7602.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7603.JPG" afterPath="$PROJECT_DIR$/img/IMG_7603.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7604.JPG" afterPath="$PROJECT_DIR$/img/IMG_7604.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7605.JPG" afterPath="$PROJECT_DIR$/img/IMG_7605.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7606.JPG" afterPath="$PROJECT_DIR$/img/IMG_7606.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7607.JPG" afterPath="$PROJECT_DIR$/img/IMG_7607.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7608.JPG" afterPath="$PROJECT_DIR$/img/IMG_7608.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7609.JPG" afterPath="$PROJECT_DIR$/img/IMG_7609.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7610.JPG" afterPath="$PROJECT_DIR$/img/IMG_7610.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7611.JPG" afterPath="$PROJECT_DIR$/img/IMG_7611.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7612.JPG" afterPath="$PROJECT_DIR$/img/IMG_7612.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7613.JPG" afterPath="$PROJECT_DIR$/img/IMG_7613.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7614.JPG" afterPath="$PROJECT_DIR$/img/IMG_7614.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7615.JPG" afterPath="$PROJECT_DIR$/img/IMG_7615.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7616.JPG" afterPath="$PROJECT_DIR$/img/IMG_7616.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7617.JPG" afterPath="$PROJECT_DIR$/img/IMG_7617.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7618.JPG" afterPath="$PROJECT_DIR$/img/IMG_7618.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7619.JPG" afterPath="$PROJECT_DIR$/img/IMG_7619.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7620.JPG" afterPath="$PROJECT_DIR$/img/IMG_7620.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7621.JPG" afterPath="$PROJECT_DIR$/img/IMG_7621.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7622.JPG" afterPath="$PROJECT_DIR$/img/IMG_7622.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7623.JPG" afterPath="$PROJECT_DIR$/img/IMG_7623.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7624.JPG" afterPath="$PROJECT_DIR$/img/IMG_7624.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7625.JPG" afterPath="$PROJECT_DIR$/img/IMG_7625.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/IMG_7626.JPG" afterPath="$PROJECT_DIR$/img/IMG_7626.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/HOT_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/HOT_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/HOT_3.jpg" />
+      <change type="DELETED" beforePath="F:\statistics_show\img\HOT_1.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\statistics_show\img\HOT_2.png" afterPath="" />
+      <change type="DELETED" beforePath="F:\statistics_show\img\HOT_3.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/example.json" afterPath="$PROJECT_DIR$/data/example.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/threesixty.css" afterPath="$PROJECT_DIR$/css/threesixty.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="statistics_show.iws" />
@@ -99,20 +57,13 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.268292">
-              <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="55" column="51" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="51" />
               <folding>
                 <element signature="e#69#421#0" expanded="false" />
                 <element signature="e#448#624#0" expanded="false" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IMG_7621.JPG" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/img/IMG_7621.JPG">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -140,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="example.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="example.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/example.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.83871">
-              <caret line="72" column="17" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.43425077">
+              <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
               <folding>
                 <element signature="e#472#1414#0" expanded="false" />
               </folding>
@@ -180,8 +131,8 @@
         <option value="$PROJECT_DIR$/css/threesixty.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/index.css" />
-        <option value="$PROJECT_DIR$/data/example.json" />
         <option value="$PROJECT_DIR$/js/index.js" />
+        <option value="$PROJECT_DIR$/data/example.json" />
       </list>
     </option>
   </component>
@@ -409,7 +360,13 @@
       <option name="project" value="LOCAL" />
       <updated>1497531227402</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="修改热点图位置">
+      <created>1497611865216</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1497611865216</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -419,6 +376,7 @@
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1704871" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293011" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -428,7 +386,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -452,7 +409,8 @@
     <MESSAGE value="修改index,音乐图片部分js" />
     <MESSAGE value="修改首页点击手势放大部分代码" />
     <MESSAGE value="修改弹幕部分" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改弹幕部分" />
+    <MESSAGE value="修改热点图位置" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改热点图位置" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -830,16 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/example.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.83871">
-          <caret line="72" column="17" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
-          <folding>
-            <element signature="e#472#1414#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-54.129032">
@@ -871,10 +819,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/img/IMG_7621.JPG">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.268292">
-          <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="51" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="51" />
           <folding>
             <element signature="e#69#421#0" expanded="false" />
             <element signature="e#448#624#0" expanded="false" />
@@ -882,9 +835,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/img/IMG_7621.JPG">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/data/example.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43425077">
+          <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+          <folding>
+            <element signature="e#472#1414#0" expanded="false" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>
