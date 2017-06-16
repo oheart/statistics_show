@@ -144,6 +144,7 @@ $(document).ready(function () {
                 imgDesc: '.img_desc',
                 framerate: 30,
                 imgArray: imgArray,
+                autoplayDirection:-1,
                 onReady: function(){
                     product_1.play();
                 }
