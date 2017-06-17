@@ -23,6 +23,40 @@ $(document).ready(function () {
         return true;
     }
 
+    var descList = new Array();
+    var imgArray = new Array();
+    var product_1;
+    function rotateImgFllowDesc(picTags){
+        if (!isEmpty(picTags)){
+            if(picTags.length==0){
+                $(".img_desc").hide();
+            }else{
+                $(".img_desc").show();
+                var descLen = imgArray.length;
+                var index=new Array;
+                for(key in picTags){
+                    index[index.length]=key;
+                }
+                if(index.length==1){
+                    descList.push(picTags[index[0]]);
+                }else{
+                    var desLen = imgArray.length;
+                    for(var i=1;i<index.length;i++){
+                        for(var j=0;j<parseInt(index[i]-index[i-1]);j++){
+                            descList.push(picTags[index[i-1]]);
+                        }
+                    }
+                    descList.push(picTags[index[index.length-1]]);
+                    if(index[index.length-1]<descLen){
+                        for(var i=0;i<=descLen-(index[index.length-1]);i++){
+                            descList.push(picTags[index[index.length-1]]);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     function processJsonData(jsonData,limitFlag){
         if (jsonData.title!=null) {
             $(".goods_name").html(jsonData.title);
@@ -49,87 +83,38 @@ $(document).ready(function () {
             $(".user_name").text(jsonData.userName);
         }
         //pic list
-        if (jsonData.picUrls!=null){
-            var imgArray = new Array();
+        if (jsonData.picUrls || jsonData.hotPicUrls){
             if(limitFlag){
-                imgArray = [];
                 for (var i=0; i<jsonData.hotPicUrls.length; i++) {
                     //imgArray.push('http://123.57.3.33:9000/pic/work/'+jsonData.picUrls[i]);
                     imgArray.push(jsonData.hotPicUrls[i]);
                 }
             }else{
-                imgArray = [];
                 for (var i=0; i<jsonData.picUrls.length; i++) {
                     //imgArray.push('http://123.57.3.33:9000/pic/work/'+jsonData.picUrls[i]);
                     imgArray.push(jsonData.picUrls[i]);
                 }
             }
 
-            var descList = new Array();
 
-            //旋转图片跟随简介-非热点
-            if (!isEmpty(jsonData.picTags) && !limitFlag){
-                descList = [];
-                if(jsonData.picTags.length==0){
-                    $(".img_desc").hide();
-                }else{
-                    $(".img_desc").show();
-                    var index=new Array;
-                    for(key in jsonData.picTags){
-                        index[index.length]=key;
-                    }
-                    if(index.length==1){
-                        descList.push(jsonData.picTags[index[0]]);
-                    }else{
-                        for(var i=1;i<index.length;i++){
-                            for(var j=0;j<parseInt(index[i]-index[i-1]);j++){
-                                descList.push(jsonData.picTags[index[i-1]]);
-                            }
-                        }
-                        if(index[index.length-1]<50){
-                            for(var i=0;i<=50-(index[index.length-1]);i++){
-                                descList.push(jsonData.picTags[index[index.length-1]]);
-                            }
-                        }
-                    }
-                }
 
+            if(limitFlag){
+                //旋转图片跟随简介-热点
+                rotateImgFllowDesc(jsonData.hotPicTags);
+            }else{
+                //旋转图片跟随简介-非热点
+                rotateImgFllowDesc(jsonData.picTags);
             }
 
-            //旋转图片跟随简介-热点
-            if (!isEmpty(jsonData.hotPicTags) && limitFlag){
-                descList = [];
-                if(jsonData.hotPicTags.length==0){
-                    $(".img_desc").hide();
-                }else{
-                    $(".img_desc").show();
-                    var index=new Array;
-                    for(key in jsonData.hotPicTags){
-                        index[index.length]=key;
-                    }
-                    if(index.length==1){
-                        descList.push(jsonData.hotPicTags[index[0]]);
-                    }else{
-                        for(var i=1;i<index.length;i++){
-                            for(var j=0;j<parseInt(index[i]-index[i-1]);j++){
-                                descList.push(jsonData.hotPicTags[index[i-1]]);
-                            }
-                        }
-                        if(index[index.length-1]<50){
-                            for(var i=0;i<=50-(index[index.length-1]);i++){
-                                descList.push(jsonData.hotPicTags[index[index.length-1]]);
-                            }
-                        }
-                    }
-                }
-
-            }
+            console.log(imgArray);
+            console.log(descList);
 
 
             var totalPicNum = imgArray.length;
+            console.log(totalPicNum);
             var picHeight = "100%";
             var picWidth = "100%";
-            var product_1 = $('.product1').ThreeSixty({
+            product_1 = $('.product1').ThreeSixty({
                 totalFrames: totalPicNum, // Total no. of image you have for 360 slider
                 endFrame: totalPicNum, // end frame for the auto spin animation
                 currentFrame: 0, // This the start frame for auto spin
@@ -146,19 +131,33 @@ $(document).ready(function () {
                 imgDesc: '.img_desc',
                 framerate: 30,
                 imgArray: imgArray,
+                playSpeed: 800,
                 autoplayDirection:-1,
                 onReady: function(){
                     product_1.play();
-                }
+                },
+                onDragStart: function () {
+                    console.log('1')
+                    console.log(imgArray);
+                    console.log(descList);
+                    clearInterval(product_1.play);
+                },
+                onDragStop: function () {
+                    console.log('2')
+                    console.log(imgArray);
+                    console.log(descList);
+                    clearInterval(product_1.play);
+                },
             });
             //$('.nav_bar_play').trigger('click');
             //product_1.play();
         }
-        if (jsonData.link!=null){
+
+       /* if (jsonData.link!=null){
             $(".goods_buy_btn").click(function(){
                 window.location.href = jsonData.link;
             });
-        }
+        }*/
     }
 
 
@@ -223,6 +222,10 @@ $(document).ready(function () {
     $(".swx-hot-spots").bind( "tap", tapHotSpotsIcon);
     function tapHotSpotsIcon(){
         ifOpenHotFlag = !ifOpenHotFlag;
+        descList = [];
+        imgArray =  [];
+        product_1.stop();
+        clearInterval(product_1.play);
         if(ifOpenHotFlag){
             $('.swx-hot-spots').attr('src','/statistics_show/img/hot_on.png');
             showImagesFromLocalJson('data/example.json',true);
