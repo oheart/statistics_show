@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <METAHTTP-EQUIV="Pragma" CONTENT="no-cache">
-    <METAHTTP-EQUIV="Cache-Control" CONTENT="no-cache">
-    <METAHTTP-EQUIV="Expires" CONTENT="0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -13,36 +10,14 @@
     <meta name="360-fullscreen" content="true" />
     <meta content="telephone=no" name="format-detection" />
     <title>三围秀</title>
-    <style>
-        div.pinch-zoom,
-        div.pinch-zoom img{
-            width: 100%;
-            -webkit-user-drag: none;
-        }
-    </style>
+
     <link rel="stylesheet" href="css/threesixty.css"/>
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/jquery.fullPage.css">
-    <script src='js/jquery3.0.1.min.js'></script>
-    <script src="js/threesixty.min.js"></script>
-    <script src="js/jquery.mobile-1.4.5.min.js"></script>
-    <script src="js/jquery.fullPage.min.js"></script>
-    <script src="js/pinchzoom.min.js"></script>
-    <script src="js/landscape.js"></script>
-    <!--<script src='js/scroll.js'></script>-->
-    <script src="js/index.js"></script>
-    <script type="text/javascript">
-    //手势缩放图片
-        $(function () {
-            $('div.pinch-zoom').each(function () {
-                new RTP.PinchZoom($(this), {});
-            });
-        })
-    </script>
+
 </head>
 <body>
-<div id="statistic-show-container">
-    <div class="section">
+<ul class="statistic-show-container" id="statistic-show-container">
+    <li class="section zIndex">
         <div class="nav" id="arrow"></div>
         <div class="pictrue">
             <div class="img-360"></div>
@@ -51,25 +26,25 @@
                 </div>
                   <div class="pinch-zoom">
                       <div class="img full-view-pic-box">
-                          <!-- <span class="yuantu">退底图</span> -->
                           <div class="threesixty product1">
                               <div class="spinner">
                                   <span>0%</span>
                               </div>
-                              <ol class="threesixty_images"></ol>
+                              <ol id="threesixty_images1" class="threesixty_images"></ol>
+                          </div>
+                          <div id="product2" class="product2">
+                              <!--<div class="spinner">
+                                  <span>0%</span>
+                              </div>
+                              <ol id="threesixty_images2" class="threesixty_images"></ol>-->
                           </div>
                       </div>
                   </div>
-                <div class="img_desc first-see-pics-desc"></div>
+                <div class="img_desc1 first-see-pics-desc"></div>
+                <div class="img_desc2 first-see-pics-desc"></div>
             </div>
-           <!-- <div class="swx-hot-area" style="display:none;">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper zpg-hot-area">
-                    </div>
-                </div>
-            </div>-->
+
         </div>
-        <!--<div class="img_desc first-see-pics-desc"></div>-->
         <div class="goods_buy">
             <div class="goods_name"></div>
             <div class="goods_buy_info">
@@ -104,112 +79,11 @@
                 </div>
             </div>
         </div>
-      <!--  <div class="goods_desc">
-            <div class="title">商品介绍</div>
-            <div class="goods_item_desc"></div>
-        </div>-->
-      <!--  <div class="down">
-            <div class="user_headimg"><img class="img_header" src="img/header.jpg"/></div>
-            <div class="user_name"></div>
-            <div class="item_like no"></div>&lt;!&ndash;yes/no类名切换图标&ndash;&gt;
-            <div class="item_favorite yes"></div>&lt;!&ndash;yes/no类名切换图标&ndash;&gt;
-            <div class="item_share"></div>
-            &lt;!&ndash; <a href="#">下载三围秀</a> &ndash;&gt;
-        </div>-->
-    </div>
+    </li>
     <!--商品介绍部分-->
-    <div class="section statistics-commodity-detail-box">
+    <li class="section">
         <!--商品详情部分-->
         <div class="statistics-commodity-detail-table"></div>
-        <!--<div class="statistics-commodity-detail">
-            <table border="0" cellpadding="0" cellspacing="0" bgcolor="#98989A" class="product-detail-table">
-                <thead>
-                    <tr class="product-detail-tr">
-                        <th  class="spec-product-bg" style="width:25%;">参数</th>
-                        <th  style="width:25%;">单位</th>
-                        <th  style="width:25%;">平板灯</th>
-                        <th  style="width:25%;">环形灯</th>
-                        <th  style="width:25%;">可调摄影灯箱</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr  class="product-detail-tr">
-                        <td  class="spec-product-bg" style="width:25%;">输入电压</th>
-                        <td>VDC</td>
-                        <td>24</td>
-                        <td>24</td>
-                        <td>110-22VAC50/60hz</td>
-                    </tr>
-                    <tr  class="product-detail-tr">
-                        <td  class="spec-product-bg" style="width:25%;">输入电流</th>
-                        <td>A</td>
-                        <td>0.6</td>
-                        <td>1.2</td>
-                        <td>1.67Aac</td>
-                    </tr>
-                    <tr  class="product-detail-tr">
-                        <td  class="spec-product-bg" style="width:25%;">额定功率</th>
-                        <td>W</td>
-                        <td>15</td>
-                        <td>28</td>
-                        <td>160</td>
-                    </tr>
-                    <tr  class="product-detail-tr">
-                        <td class="spec-product-bg"  style="width:25%;">色温</th>
-                        <td>CCT.</td>
-                        <td>5400</td>
-                        <td>5400</td>
-                        <td>/</td>
-                    </tr>
-                    <tr  class="product-detail-tr">
-                        <td  class="spec-product-bg" style="width:25%;">显指</th>
-                        <td>Ra</td>
-                        <td>80</td>
-                        <td>82</td>
-                        <td>/</td>
-                    </tr>
-                    <tr  class="product-detail-tr">
-                        <td  class="spec-product-bg" style="width:25%;">光通量</th>
-                        <td>Lm</td>
-                        <td>1600</td>
-                        <td>3200</td>
-                        <td>/</td>
-                    </tr>
-                    <tr  class="product-detail-tr">
-                        <td  class="spec-product-bg" style="width:25%;">工作温度</th>
-                        <td>℃</td>
-                        <td  colspan="3">-20℃-+45℃</td>
-                    </tr>
-                    <tr  class="product-detail-tr">
-                        <td  class="spec-product-bg" style="width:25%;">存储温度</th>
-                        <td>℃<</td>
-                        <td colspan="3">-20℃-+60℃</td>
-                    </tr>
-                    <tr  class="product-detail-tr">
-                        <td  class="spec-product-bg" style="width:25%;">外形尺寸</th>
-                        <td>mm</td>
-                        <td>365*375*10</td>
-                        <td>300*25</td>
-                        <td>400*400*200</td>
-                    </tr>
-                    <tr  class="product-detail-tr">
-                        <td  class="spec-product-bg" style="width:25%;">重量</th>
-                        <td>kg</td>
-                        <td>1.1</td>
-                        <td>1</td>
-                        <td>10</td>
-                    </tr>
-                    <tr  class="product-detail-tr">
-                        <td  class="spec-product-bg" style="width:25%;">功能</th>
-                        <td colspan="4">灯箱底部和侧面发光，灯箱拍物体补充照明</td>
-                    </tr>
-                    <tr>
-                        <td  class="spec-product-bg" style="width:25%;">产品配置</th>
-                        <td  colspan="4">可调节摄影灯箱、全透光转盘、环形灯、扩散板、平板灯、蓝牙触发器、航空插头、可任意变动支架</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>-->
         <!--加入购物车部分-->
         <div class="statistics-goods-buy clear">
             <div class="buy-pic-icon">
@@ -222,9 +96,8 @@
                 立即购买
             </div>
         </div>
-    </div>
-
-</div>
+    </li>
+</ul>
 <!--音乐部分-->
 <div class="zpg-other-container">
     <img src="img/music.png" class="swx-music"/>
@@ -233,3 +106,6 @@
 </div>
 </body>
 </html>
+<script src='js/jquery3.0.1.min.js'></script>
+<script src="js/threesixty.min.js"></script>
+<script src="js/index.js"></script>

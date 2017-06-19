@@ -78,8 +78,9 @@
 }
 
 html,body{
-   /* width: 100%;
-    height:100%;*/
+    width: 100%;
+    height:100%;
+    overflow: hidden;
 }
 body, h1, h2, h3, h4, h5, h6, p, span, img {
     margin: 0;
@@ -125,6 +126,21 @@ a {
     display:block;
     content:'';
     clear:both;
+}
+.statistic-show-container{
+    width: 100%;
+    height: 100%;
+}
+.section{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+}
+.zIndex{
+    z-index: 6666;
 }
 .nav {
     position: relative;
@@ -176,26 +192,11 @@ a {
     overflow: hidden;
 }
 .img-360{
-    /*position: absolute;*/
-    /*top: .2rem;
-    left: .2rem;*/
-    /*z-index: 9999;*/
     width: .4rem;
     height: .24rem;
     background: url(../img/360.png)no-repeat 100% 100%;
     background-size: .4rem .24rem;
     margin: .04rem 0 0 .04rem;
-}
-.pictrue .img img {
-   /* position: absolute;
-    left: 0;
-    vertical-align: middle;
-    text-align: center;
-    /!*width: 100%;*!/
-    /!*height: 3.6rem;*!/
-    right: 0;
-    bottom: 0;
-    margin: auto;*/
 }
 
 .pictrue .img img.expend {
@@ -261,7 +262,7 @@ a {
     color: white;
 }
 
-.img_desc{
+.img_desc1,.img_desc2{
     display: none;
     width: 100%;
     min-height: 0.44rem;
@@ -270,8 +271,6 @@ a {
     line-height: 0.34rem;
     color: #FFFFFF;
     background-color: #666666;
-    /*padding: .05rem .1rem;*/
-    /*box-sizing: border-box;*/
 }
 
 .goods_buy {
@@ -292,15 +291,10 @@ a {
 
 .goods_buy_info {
     width: 100%;
-    /*height: 0.45rem;*/
     position: relative;
 }
 
 .goods_buy_left{
-   /* width: 2rem;
-    height: 100%;
-    float: left;
-    margin-left: .1rem;*/
     width: 100%;
     height: 100%;
     float: left;
@@ -429,14 +423,12 @@ a {
 .img_like{
     height: 60%;
     width: auto;
-    /*border-radius:40px;*/
     vertical-align:middle;
 }
 
 .img_favorite {
     height: 60%;
     width: auto;
-    /*border-radius:40px;*/
     vertical-align:middle;
 }
 
@@ -445,9 +437,6 @@ a {
     width: auto;
     /*border-radius:40px;*/
     vertical-align:middle;
-}
-.statistics-commodity-detail-box{
-
 }
 .statistics-commodity-detail{
     width: 98%;
@@ -463,6 +452,30 @@ a {
     height:80%;
     margin-top: 8%;
 }
+.product2{
+    display: none;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+.slideImgDiv{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+}
+.slideImgDiv img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+}
+
 .product-detail-param{
     width:100%;
     background:#98989A;
@@ -500,7 +513,7 @@ a {
 }
 
 .swx-music{
-    position:absolute;
+    position:fixed;
     right:10px;
     top:10px;
     z-index:9999;
@@ -573,9 +586,6 @@ a {
     bottom:0;
     left: 50%;
     transform: translate(-50%,-50%);
-   /* -moz-backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;*/
 }
 
 @keyframes nextpage
@@ -626,25 +636,10 @@ a {
 .active-hot-pics{
     width: 100%;
     height:auto;
-   /* position: absolute;
-    left: 0;
-    vertical-align: middle;
-    text-align: center;
-    /!* width: 100%; *!/
-    /!* height: 3.6rem; *!/
-    right: 0;
-    bottom: 0;
-    margin: auto;*/
-   /* position: absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);*/
 }
 
 
 .fullview-pic-desc{
-    color:red;
-    font-size: 16px;
     position: absolute;
     left: 0;
     bottom:0;
@@ -658,8 +653,6 @@ a {
     padding: .05rem .1rem;
 }
 .first-see-pics-desc{
-    color:red;
-    font-size: 16px;
     position: absolute;
     left: 0;
     bottom:0;
@@ -670,7 +663,7 @@ a {
     line-height: 0.34rem;
     color: #FFFFFF;
     background-color: #666666;
-    /*padding: .05rem .1rem;*/
+    z-index: 9999;
 }
 .zpg-barrage-container{
     width: 100%;
@@ -684,3 +677,4 @@ a {
     text-align: center;
     font-size: .14rem;
 }
+/*-------重设滑屏---------*/
