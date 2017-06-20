@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="100ae847-d592-460a-9f9f-11f13c2d93cf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="statistics_show.iws" />
@@ -461,7 +458,13 @@
       <option name="project" value="LOCAL" />
       <updated>1497949921479</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="图片文字描述部分">
+      <created>1497950289655</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1497950289655</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -509,7 +512,8 @@
     <MESSAGE value="修改图片说明部分" />
     <MESSAGE value="修改图片说明部分css" />
     <MESSAGE value="修改弹幕" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改弹幕" />
+    <MESSAGE value="图片文字描述部分" />
+    <option name="LAST_COMMIT_MESSAGE" value="图片文字描述部分" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
