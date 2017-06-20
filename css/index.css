@@ -702,13 +702,6 @@ a {
 }
 /*-------重设滑屏---------*/
 /*弹幕*/
-/*.zpg-barrage-content{
-    background:#666;
-    width:1000px;
-    height:400px;
-    overflow:hidden;
-    margin:0 auto;
-}*/
 .dndetail{
     position: relative;
     left:1000px;
@@ -742,30 +735,6 @@ a {
     }
 }
 
-/*
-@-webkit-keyframes barrage {
-    from {
-        left:100%;
-        transform:translate3d(0,0,0);
-    }
-
-    to {
-        left:0;
-        transform:translate3d(-100%,0,0);
-    }
-}
-@keyframes barrage {
-    from {
-        left:100%;
-        transform:translate3d(0,0,0);
-    }
-
-    to {
-        left:0;
-        transform:translate3d(-100%,0,0);
-    }
-}
-*/
 
 
 
