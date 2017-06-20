@@ -62,8 +62,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45594406">
-              <caret line="280" column="17" selection-start-line="280" selection-start-column="17" selection-end-line="280" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.54825175">
+              <caret line="283" column="13" selection-start-line="283" selection-start-column="13" selection-end-line="283" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -133,8 +133,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-30" />
-    <option name="y" value="43" />
+    <option name="x" value="-15" />
+    <option name="y" value="140" />
     <option name="width" value="1452" />
     <option name="height" value="876" />
   </component>
@@ -420,11 +420,17 @@
       <option name="project" value="LOCAL" />
       <updated>1497926960038</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="修改图片说明部分css">
+      <created>1497927244952</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1497927244952</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-30" y="43" width="1452" height="876" extended-state="0" />
+    <frame x="-15" y="140" width="1452" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13224894" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -914,8 +920,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45594406">
-          <caret line="280" column="17" selection-start-line="280" selection-start-column="17" selection-end-line="280" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.54825175">
+          <caret line="283" column="13" selection-start-line="283" selection-start-column="13" selection-end-line="283" selection-end-column="13" />
           <folding />
         </state>
       </provider>
