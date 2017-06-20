@@ -667,9 +667,8 @@ a {
     color:#000;
     background: #F6BA29;;
     z-index: 9999;
-    font-weight: bold;
     padding:0.1rem 0;
-    line-height: .22rem;
+    line-height: .28rem;
 }
 .zpg-barrage-container{
     width: 100%;
