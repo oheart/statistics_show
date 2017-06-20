@@ -167,12 +167,6 @@ $(document).ready(function () {
                     autoplayDirection:-1,
                     onReady: function(){
                         product_1.play();
-                    },
-                    onDragStart: function () {
-                        product_1.stop();
-                    },
-                    onDragStop: function () {
-                        product_1.play();
                     }
                 });
 

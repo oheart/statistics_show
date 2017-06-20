@@ -265,12 +265,13 @@ a {
 .img_desc1,.img_desc2{
     display: none;
     width: 100%;
-    min-height: 0.44rem;
+    /*min-height: 0.44rem;*/
     text-align: center;
     font-size: 0.15rem;
-    line-height: 0.34rem;
+    /*line-height: 0.34rem;*/
     color: #FFFFFF;
-    background-color: #666666;
+    /*background-color: #666666;*/
+    background: #F6BA29;
 }
 
 .goods_buy {
@@ -657,13 +658,18 @@ a {
     left: 0;
     bottom:0;
     width: 100%;
-    min-height: 0.44rem;
+    /*min-height: 0.44rem;*/
     text-align: center;
     font-size: 0.15rem;
-    line-height: 0.34rem;
-    color: #FFFFFF;
-    background-color: #666666;
+    /*line-height: 0.34rem;*/
+    /*color: #FFFFFF;*/
+    /*background-color: #666666;*/
+    color:#000;
+    background: #F6BA29;;
     z-index: 9999;
+    font-weight: bold;
+    padding:0.1rem 0;
+    line-height: .22rem;
 }
 .zpg-barrage-container{
     width: 100%;
