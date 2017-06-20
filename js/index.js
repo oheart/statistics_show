@@ -48,7 +48,7 @@ $(document).ready(function () {
 
         jsonData.title != null ? $(".goods_name").html(jsonData.title) : void 0;
         jsonData.desc != null ? $(".goods_item_desc").text(jsonData.desc) : void 0;
-        jsonData.price != null ? $(".goods_buy_left_1").text("即刻限时特价：￥"+jsonData.price) : void 0;
+        jsonData.price != null ? $(".goods_buy_left_1").text("即刻限时特价：￥"+ toThousands(jsonData.price)  + ".00" ): void 0;
         jsonData.saleCount != null ? $(".goods_buy_left_2").text("销量: "+jsonData.saleCount) : void 0;
         jsonData.likeCount != null ? $(".item_like").text(jsonData.likeCount) : void 0;
         jsonData.userName != null ? $(".user_name").text(jsonData.userName) : void 0;
@@ -360,7 +360,17 @@ $(document).ready(function () {
 
     }
 
-
+    //千分位
+    function toThousands(num) {
+        var result = [ ], counter = 0;
+        num = (num || 0).toString().split('');
+        for (var i = num.length - 1; i >= 0; i--) {
+            counter++;
+            result.unshift(num[i]);
+            if (!(counter % 3) && i != 0) { result.unshift(','); }
+        }
+        return result.join('');
+    }
     //滑动
     var winW = document.documentElement.clientWidth;
     var winH = document.documentElement.clientHeight;
