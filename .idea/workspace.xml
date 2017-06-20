@@ -62,8 +62,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2923077">
-              <caret line="668" column="18" selection-start-line="668" selection-start-column="18" selection-end-line="668" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.45594406">
+              <caret line="280" column="17" selection-start-line="280" selection-start-column="17" selection-end-line="280" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -133,8 +133,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-268" />
-    <option name="y" value="14" />
+    <option name="x" value="-30" />
+    <option name="y" value="43" />
     <option name="width" value="1452" />
     <option name="height" value="876" />
   </component>
@@ -414,11 +414,17 @@
       <option name="project" value="LOCAL" />
       <updated>1497926743949</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="修改图片说明部分css">
+      <created>1497926960038</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1497926960038</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-268" y="14" width="1452" height="876" extended-state="0" />
+    <frame x="-30" y="43" width="1452" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13224894" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -460,7 +466,8 @@
     <MESSAGE value="修改热点图位置" />
     <MESSAGE value="修改热点部分" />
     <MESSAGE value="修改图片说明部分" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改图片说明部分" />
+    <MESSAGE value="修改图片说明部分css" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改图片说明部分css" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -907,8 +914,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2923077">
-          <caret line="668" column="18" selection-start-line="668" selection-start-column="18" selection-end-line="668" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.45594406">
+          <caret line="280" column="17" selection-start-line="280" selection-start-column="17" selection-end-line="280" selection-end-column="17" />
           <folding />
         </state>
       </provider>

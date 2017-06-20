@@ -278,7 +278,7 @@ a {
     width: 100%;
     height: auto;
     /*border-bottom: 1px solid #eaeaea;*/
-    margin-top: 5%;
+    margin-top: 6%;
 }
 
 .goods_name {
@@ -664,7 +664,7 @@ a {
     /*line-height: 0.34rem;*/
     /*color: #FFFFFF;*/
     /*background-color: #666666;*/
-    color:#000;
+    color:#333;
     background: #F6BA29;;
     z-index: 9999;
     padding:0.1rem 0;
