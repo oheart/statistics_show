@@ -361,7 +361,7 @@ $(document).ready(function () {
     ];
     for(var i = 0; i < barrageArr.length -1; i++){
         var creSpan = '<div class="mb5 barrage-inner">' +
-            '<span class="barrage-txt mr10">'+ barrageArr[i].text +'</span>' +
+            '<span class="barrage-txt mr26">'+ barrageArr[i].text +'</span>' +
         '</div>';
         barrageBox.prepend(creSpan);
     }
