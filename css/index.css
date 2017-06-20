@@ -681,5 +681,76 @@ a {
 .zpg-barrage-content{
     text-align: center;
     font-size: .14rem;
+    overflow:hidden;
 }
 /*-------重设滑屏---------*/
+/*弹幕*/
+/*.zpg-barrage-content{
+    background:#666;
+    width:1000px;
+    height:400px;
+    overflow:hidden;
+    margin:0 auto;
+}*/
+.dndetail{
+    position: relative;
+    left:1000px;
+    margin:0;
+    padding:0;
+}
+.barrage-inner{
+    float:left;
+   animation:barrage linear 3s infinite;
+}
+
+@-webkit-keyframes barrage {
+    from {
+        left:100%;
+        transform:translate3d(0,0,0);
+    }
+
+    to {
+        left:0;
+        transform:translate3d(-100%,0,0);
+    }
+}
+@keyframes barrage {
+    from {
+        left:100%;
+        transform:translate3d(0,0,0);
+    }
+
+    to {
+        left:0;
+        transform:translate3d(-100%,0,0);
+    }
+}
+
+
+
+.icon-wh,.icon-wh2{
+    position:absolute;
+    right:0;
+    top:0;
+    width:102px;
+    height: 102px;
+    background:#f60;
+    -webkit-animation:translateX 10s ease-out infinite;
+    animation:translateX 10s ease-out infinite;
+}
+/*不同时间*/
+.icon-wh2{
+    top: 100px;
+    width:62px;
+    height: 164px;
+    -webkit-animation:translateX 10s ease-out infinite;
+    animation:translateX 10s ease-out infinite;
+}
+@-webkit-keyframes translateX{
+    0%{ -webkit-transform: translate3d(0,0, 0);}
+    100%{-webkit-transform: translate3d(-1920px,100px,0);}
+}
+@keyframes translateX{
+    0%{ transform: translate3d(0, 0, 0);}
+    100%{transform: translate3d(-1920px,100px,0);}
+}

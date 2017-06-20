@@ -3,12 +3,12 @@ $(document).ready(function () {
     var TRANSFORM = 'transform';
     (typeof document.body.style.webkitTransform !== undefined) ? TRANSFORM = 'webkitTransform' :void 0;
 
-    var distance = {};              //用于记住手势距离
-    var imgScale = 1;               //用于保存缩放值
-    var limitFlag = false;          //是否开启热点
-    var curImgIndex = 0;            //第二图的显示索引
-    var imgArray;                   //保存所有图片数组
-    var descList;                   //保存所有图片描述数组
+    var distance = {}; //用于记住手势距离
+    var imgScale = 1;  //用于保存缩放值
+    var limitFlag = false;  //是否开启热点
+    var curImgIndex = 0; //第二图的显示索引
+    var imgArray;
+    var descList;
     //从后台获取
     function showImagesWithId(workId){
 
@@ -29,7 +29,6 @@ $(document).ready(function () {
         });
     }
 
-    //判断是否为空
     function isEmpty(obj){
 
         for(var name in obj) {
@@ -167,6 +166,12 @@ $(document).ready(function () {
                     autoplayDirection:-1,
                     onReady: function(){
                         product_1.play();
+                    },
+                    onDragStart: function () {
+                        product_1.stop();
+                    },
+                    onDragStop: function () {
+                        product_1.play();
                     }
                 });
 
@@ -206,7 +211,7 @@ $(document).ready(function () {
                 }
 
                 product2.innerHTML = imgHtml;
-                $(".img_desc2").html(descList[curImgIndex]);
+                $(".img_desc2").text(descList[curImgIndex]);
 
             }
 
@@ -222,7 +227,7 @@ $(document).ready(function () {
         }
 
     }
-
+    var fullViewData;
     function showImagesFromLocalJson(jsonFile){
 
         $.getJSON(jsonFile, function(data){
@@ -234,7 +239,7 @@ $(document).ready(function () {
             } else {
 
                 processJsonData(data.data);
-
+                fullViewData = data.data;
             }
 
         });
@@ -244,7 +249,6 @@ $(document).ready(function () {
 
     //初始化时播放音乐
     var myAuto = document.getElementById('audio');
-    myAuto.play();
 
     //点击切换音乐播放和暂停效果
     $(".swx-music").bind( "click", tapMusicIcon);
@@ -309,6 +313,66 @@ $(document).ready(function () {
 
     }
 
+    //弹幕
+    var barrageBox = $("#J_barrage_stage");
+    var barrageArr = [
+        {
+            "text": "我就是路过看看。。"
+        },
+        {
+            "text": "good"
+        },
+        {
+            "text": "赞赞赞"
+        },
+        {
+            "text": "还想再入一件"
+        },
+        {
+            "text": "强烈推荐，美。。"
+        },
+        {
+            "text": "666"
+        },
+        {
+            "text": "惊呆了"
+        },
+        {
+            "text": "这是啥"
+        },
+        {
+            "text": "摄影棚"
+        },
+        {
+            "text": "360°"
+        },
+        {
+            "text": "喜欢"
+        },
+        {
+            "text": "soga"
+        },
+        {
+            "text": "很满意"
+        },
+        {
+            "text": "☺"
+        }
+    ];
+    for(var i = 0; i < barrageArr.length -1; i++){
+        var creSpan = '<div class="mb5 barrage-inner">' +
+            '<span class="barrage-txt mr10">'+ barrageArr[i].text +'</span>' +
+        '</div>';
+        barrageBox.prepend(creSpan);
+    }
+
+
+    function getRandomColor(){
+        return '#' + (function(h){
+                return new Array(7 - h.length).join("0") + h
+            })((Math.random() * 0x1000000 << 0).toString(16));
+    }
+
     //滑动
     var winW = document.documentElement.clientWidth;
     var winH = document.documentElement.clientHeight;
@@ -328,12 +392,11 @@ $(document).ready(function () {
     function setScaleAnimation(element,scale) {
 
         if(scale<0.5){
-             scale=0.5
+            scale=0.5
         }
         // 缩放和位移
         element.style[TRANSFORM] = 'scale(' + scale + ')';
     }
-
     function oLisTouchStart(ev) {
 
         this.startX = ev.changedTouches[0].pageX;
@@ -409,46 +472,53 @@ $(document).ready(function () {
 
                 var oDiv = $("div.slideImgDiv");
                 curImgIndex = parseInt($(ev.target).attr("curImgIndex"));//当前图的索引
-                if(Math.abs(changeX)>Math.abs(changeY)){
-                    this.flag = false;  //横滑不改变
-                    if(changeX < 0){//小于0说明是向左滑，图片递增
-                        curImgIndex = curImgIndex + 1;
-                        [].forEach.call(oDiv,function(){
-                            //除了自己其他所有的隐藏(通过索引来判断当前这张是不是自己)
-                            if(curImgIndex != arguments[1]){
-                                arguments[0].style.display = "none";
-                            }
-                            arguments[0].className = "slideImgDiv";
-                        });
-                        if(curImgIndex == imgArray.length){
-                            curImgIndex = 0;
-                        }
-                        var duration=winW + changeX;
-                        oDiv[curImgIndex].style.webkitTransform = "translateX(0," + duration + "px)";
-                        oDiv[curImgIndex].className = "slideImgDiv zIndex";
-                        oDiv[curImgIndex].style.display = "block";
-                        this.style.webkitTransform = "scale(" + (1 - Math.abs(changeX / winW)* step ) + ") translateX(0," + changeX + "px)";
-                        $(".img_desc2").html(descList[curImgIndex]);
 
-                    }else if(changeX > 0){
-                        curImgIndex = curImgIndex - 1;
-                        [].forEach.call(oDiv,function(){
-                            //除了自己其他所有的隐藏(通过索引来判断当前这张是不是自己)
-                            if(curImgIndex != arguments[1]){
-                                arguments[0].style.display = "none";
+                if(Math.abs(changeX) > Math.abs(changeY)){
+
+                    this.flag = false;  //横滑不改变
+
+                    if(Math.abs(changeX) - Math.abs(changeY) >= 50 && (ev.touches.length < 2)){
+
+                        if(changeX < 0){//小于0说明是向左滑，图片递增
+                            curImgIndex = curImgIndex + 1;
+                            [].forEach.call(oDiv,function(){
+                                //除了自己其他所有的隐藏(通过索引来判断当前这张是不是自己)
+                                if(curImgIndex != arguments[1]){
+                                    arguments[0].style.display = "none";
+                                }
+                                arguments[0].className = "slideImgDiv";
+                            });
+                            if(curImgIndex == imgArray.length){
+                                curImgIndex = 0;
                             }
-                            arguments[0].className = "slideImgDiv";
-                        });
-                        if(curImgIndex == -1){
-                            curImgIndex = 2;
+                            var duration=winW + changeX;
+                            oDiv[curImgIndex].style.webkitTransform = "translateX(0," + duration + "px)";
+                            oDiv[curImgIndex].className = "slideImgDiv zIndex";
+                            oDiv[curImgIndex].style.display = "block";
+                            this.style.webkitTransform = "scale(" + (1 - Math.abs(changeX / winW)* step ) + ") translateX(0," + changeX + "px)";
+                            $(".img_desc2").html(descList[curImgIndex]);
+
+                        }else if(changeX > 0){
+                            curImgIndex = curImgIndex - 1;
+                            [].forEach.call(oDiv,function(){
+                                //除了自己其他所有的隐藏(通过索引来判断当前这张是不是自己)
+                                if(curImgIndex != arguments[1]){
+                                    arguments[0].style.display = "none";
+                                }
+                                arguments[0].className = "slideImgDiv";
+                            });
+                            if(curImgIndex == -1){
+                                curImgIndex = 2;
+                            }
+                            var duration=-winW + changeX;
+                            oDiv[curImgIndex].style.webkitTransform = "translateX(0," + duration + "px)";
+                            oDiv[curImgIndex].className = "slideImgDiv zIndex";
+                            oDiv[curImgIndex].style.display = "block";
+                            this.style.webkitTransform = "scale(" + (1 - Math.abs(changeX / winW)* step ) + ") translateX(0," + changeX + "px)";
+                            $(".img_desc2").html(descList[curImgIndex]);
                         }
-                        var duration=-winW + changeX;
-                        oDiv[curImgIndex].style.webkitTransform = "translateX(0," + duration + "px)";
-                        oDiv[curImgIndex].className = "slideImgDiv zIndex";
-                        oDiv[curImgIndex].style.display = "block";
-                        this.style.webkitTransform = "scale(" + (1 - Math.abs(changeX / winW)* step ) + ") translateX(0," + changeX + "px)";
-                        $(".img_desc2").html(descList[curImgIndex]);
                     }
+
 
                 }
 
