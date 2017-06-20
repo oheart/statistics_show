@@ -211,7 +211,7 @@ $(document).ready(function () {
                 }
 
                 product2.innerHTML = imgHtml;
-                $(".img_desc2").text(descList[curImgIndex]);
+                $(".img_desc2").html(descList[curImgIndex]);
 
             }
 

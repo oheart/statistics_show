@@ -665,10 +665,23 @@ a {
     text-align: center;
     font-size: 0.15rem;
     /*line-height: 0.34rem;*/
-    /*color: #FFFFFF;*/
-    /*background-color: #666666;*/
+    color: #FFFFFF;
+    background-color: #666666;
+    z-index: 9999;
+    padding:0.1rem 0;
+    line-height: .28rem;
+}
+.sencond-see-pics-desc{
+    position: absolute;
+    left: 0;
+    bottom:0;
+    width: 100%;
+    /*min-height: 0.44rem;*/
+    text-align: center;
+    font-size: 0.15rem;
+    /*line-height: 0.34rem;*/
     color:#333;
-    background: #F6BA29;;
+    background: #F6BA29;
     z-index: 9999;
     padding:0.1rem 0;
     line-height: .28rem;
