@@ -9,6 +9,11 @@ $(document).ready(function () {
     var curImgIndex = 0; //第二图的显示索引
     var imgArray;
     var descList;
+
+    $('.product1').css("display","block");
+    $('.product2').css("display","none");
+    $('.img_desc2').css("display","none");
+    $('.img_desc1').css("display","block");
     //从后台获取
     function showImagesWithId(workId){
 
@@ -48,7 +53,7 @@ $(document).ready(function () {
 
         jsonData.title != null ? $(".goods_name").html(jsonData.title) : void 0;
         jsonData.desc != null ? $(".goods_item_desc").text(jsonData.desc) : void 0;
-        jsonData.price != null ? $(".goods_buy_left_1").text("即刻限时特价：￥"+ toThousands(jsonData.price)  + ".00" ): void 0;
+        jsonData.price != null ? $(".goods_buy_left_1").text("即刻限时特价：￥"+ toThousands(jsonData.price)  + ".00") : void 0;
         jsonData.saleCount != null ? $(".goods_buy_left_2").text("销量: "+jsonData.saleCount) : void 0;
         jsonData.likeCount != null ? $(".item_like").text(jsonData.likeCount) : void 0;
         jsonData.userName != null ? $(".user_name").text(jsonData.userName) : void 0;
@@ -95,7 +100,6 @@ $(document).ready(function () {
 
                 }else {
 
-                    $(".first-see-pics-desc").show();
                     var index = new Array;
 
                     for(key in data){
@@ -133,15 +137,9 @@ $(document).ready(function () {
 
             if(!limitFlag){
 
-                $('.product1').css("display","block");
-                $('.product2').css("display","none");
-
                 if (!isEmpty(jsonData.picTags)){
 
                     imgFollowDisc(jsonData.picTags); //旋转图片跟随简介-非热点
-
-                    $('.img_desc2').css("display","none");
-                    $('.img_desc1').css("display","block");
 
                 }
 
@@ -178,56 +176,131 @@ $(document).ready(function () {
 
             }
 
-            if(limitFlag){
 
-                $('.product1').css("display","none");
-                $('.product2').css("display","block");
-                //旋转图片跟随简介-热点
-                if (!isEmpty(jsonData.hotPicTags)){
 
-                    imgFollowDisc(jsonData.hotPicTags); //旋转图片跟随简介-热点
-                    $('.img_desc1').css("display","none");
-                    $('.img_desc2').css("display","block");
-
+            //弹幕
+            var barrageBox = $("#J_barrage_stage");
+            var barrageArr = [
+                {
+                    "text": "我就是路过看看。。"
+                },
+                {
+                    "text": "good"
+                },
+                {
+                    "text": "赞赞赞"
+                },
+                {
+                    "text": "还想再入一件"
+                },
+                {
+                    "text": "强烈推荐，美。。"
+                },
+                {
+                    "text": "666"
+                },
+                {
+                    "text": "惊呆了"
+                },
+                {
+                    "text": "这是啥"
+                },
+                {
+                    "text": "喜欢"
                 }
-                var imgHtml = "";
-                var product2 = document.getElementById("product2");
+            ];
+            for(var i = 0; i < barrageArr.length; i++){
+                var creSpan = '<div class="mb5 barrage-inner">' +
+                    '<span class="barrage-txt mr16">'+ barrageArr[i].text +'</span>' +
+                    '</div>';
+                barrageBox.prepend(creSpan);
+            }
+            var aniVal = 'barrage linear 8s infinite';
+            $('.zpg-barrage-content').css('animation',aniVal);
 
-                for(var i = 0;i < imgArray.length;i++){
-
-                    if(i == 0){
-
-                        imgHtml += "<div class='slideImgDiv zIndex'>";
-
-                    }else{
-
-                        imgHtml += "<div class='slideImgDiv'>";
-
-                    }
-
-                    imgHtml += "<img src="+" ' " + imgArray[i] +" ' curImgIndex=" + i + "> ";
-                    imgHtml += "</div>";
-
-                }
-
-                product2.innerHTML = imgHtml;
-                $(".img_desc2").html(descList[curImgIndex]);
-
+            function getRandomColor(){
+                return '#' + (function(h){
+                        return new Array(7 - h.length).join("0") + h
+                    })((Math.random() * 0x1000000 << 0).toString(16));
             }
 
+
+            //点击热点
+            $(".swx-hot-spots").bind( "click", tapHotSpotsIcon);
+
+            function tapHotSpotsIcon(){
+
+                limitFlag = !limitFlag;
+                imgArray = [];
+
+                for (var i = 0; i < jsonData.hotPicUrls.length; i++) {
+
+                    //imgArray.push('http://123.57.3.33:9000/pic/work/'+jsonData.picUrls[i]);
+                    imgArray.push(jsonData.hotPicUrls[i]);
+
+                }
+                if(limitFlag){
+                    $('.product1').css("display","none");
+                    $('.product2').css("display","block");
+                    $('.img_desc1').css("display","none");
+                    $('.img_desc2').css("display","block");
+                    $('.swx-hot-spots').attr('src','/statistics_show/img/hot_on.png');
+                    if(limitFlag){
+
+                        //旋转图片跟随简介-热点
+                        if (!isEmpty(jsonData.hotPicTags)){
+
+                            imgFollowDisc(jsonData.hotPicTags); //旋转图片跟随简介-热点
+
+                        }
+                        var imgHtml = "";
+                        var product2 = document.getElementById("product2");
+
+                        for(var i = 0;i < imgArray.length;i++){
+
+                            if(i == 0){
+
+                                imgHtml += "<div class='slideImgDiv zIndex'>";
+
+                            }else{
+
+                                imgHtml += "<div class='slideImgDiv'>";
+
+                            }
+
+                            imgHtml += "<img src="+" ' " + imgArray[i] +" ' curImgIndex=" + i + "> ";
+                            imgHtml += "</div>";
+
+                        }
+
+                        product2.innerHTML = imgHtml;
+                        $(".img_desc2").html(descList[curImgIndex]);
+
+                    }
+                }else{
+                    $('.product1').css("display","block");
+                    $('.product2').css("display","none");
+                    $('.img_desc2').css("display","none");
+                    $('.img_desc1').css("display","block");
+                    $('.swx-hot-spots').attr('src','/statistics_show/img/hot_off.png');
+
+                }
+
+            }
+            if (jsonData.link != null){
+
+                $(".goods_buy_btn").click(function(){
+
+                    window.location.href = jsonData.link;
+
+                });
+
+            }
         }
-        if (jsonData.link != null){
 
-            $(".goods_buy_btn").click(function(){
-
-                window.location.href = jsonData.link;
-
-            });
-
-        }
 
     }
-    var fullViewData;
+
     function showImagesFromLocalJson(jsonFile){
 
         $.getJSON(jsonFile, function(data){
@@ -239,7 +312,7 @@ $(document).ready(function () {
             } else {
 
                 processJsonData(data.data);
-                fullViewData = data.data;
+
             }
 
         });
@@ -276,7 +349,7 @@ $(document).ready(function () {
     $(".swx-barrage").bind( "click", tapBarrageIcon);
 
     function tapBarrageIcon(){
-        $('.zpg-barrage-content').empty();
+
         ifOpenBarrageFlag = !ifOpenBarrageFlag;
 
         if(ifOpenBarrageFlag){
@@ -290,74 +363,6 @@ $(document).ready(function () {
             $('.swx-barrage').attr('src','/statistics_show/img/barrage.png');
 
         }
-
-
-        //弹幕
-        var barrageBox = $("#J_barrage_stage");
-        var barrageArr = [
-            {
-                "text": "我就是路过看看。。"
-            },
-            {
-                "text": "good"
-            },
-            {
-                "text": "赞赞赞"
-            },
-            {
-                "text": "还想再入一件"
-            },
-            {
-                "text": "强烈推荐，美。。"
-            },
-            {
-                "text": "666"
-            },
-            {
-                "text": "惊呆了"
-            },
-            {
-                "text": "这是啥"
-            },
-            {
-                "text": "喜欢"
-            }
-        ];
-        for(var i = 0; i < barrageArr.length; i++){
-                var creSpan = '<div class="mb5 barrage-inner">' +
-                    '<span class="barrage-txt mr16">'+ barrageArr[i].text +'</span>' +
-                    '</div>';
-                barrageBox.prepend(creSpan);
-        }
-        var aniVal = 'barrage linear 8s infinite';
-        $('.zpg-barrage-content').css('animation',aniVal);
-
-        function getRandomColor(){
-            return '#' + (function(h){
-                    return new Array(7 - h.length).join("0") + h
-                })((Math.random() * 0x1000000 << 0).toString(16));
-        }
-    }
-
-    //点击热点
-    $(".swx-hot-spots").bind( "click", tapHotSpotsIcon);
-
-    function tapHotSpotsIcon(){
-
-        limitFlag = !limitFlag;
-
-        if(limitFlag){
-
-            $('.swx-hot-spots').attr('src','/statistics_show/img/hot_on.png');
-
-        }else{
-
-            $('.swx-hot-spots').attr('src','/statistics_show/img/hot_off.png');
-
-        }
-
-        showImagesFromLocalJson('data/example.json');
-
     }
 
     //千分位
@@ -371,6 +376,8 @@ $(document).ready(function () {
         }
         return result.join('');
     }
+
+
     //滑动
     var winW = document.documentElement.clientWidth;
     var winH = document.documentElement.clientHeight;
@@ -552,10 +559,6 @@ $(document).ready(function () {
                 },false);
                 this.flag = false;
             }
-        }else{
-            imgScale = 1;
-            setScaleAnimation(ev.target,imgScale);
-
         }
 
 
