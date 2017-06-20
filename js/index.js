@@ -276,7 +276,7 @@ $(document).ready(function () {
     $(".swx-barrage").bind( "click", tapBarrageIcon);
 
     function tapBarrageIcon(){
-
+        $('.zpg-barrage-content').empty();
         ifOpenBarrageFlag = !ifOpenBarrageFlag;
 
         if(ifOpenBarrageFlag){
@@ -289,6 +289,53 @@ $(document).ready(function () {
             $('.zpg-barrage-container').hide();
             $('.swx-barrage').attr('src','/statistics_show/img/barrage.png');
 
+        }
+
+
+        //弹幕
+        var barrageBox = $("#J_barrage_stage");
+        var barrageArr = [
+            {
+                "text": "我就是路过看看。。"
+            },
+            {
+                "text": "good"
+            },
+            {
+                "text": "赞赞赞"
+            },
+            {
+                "text": "还想再入一件"
+            },
+            {
+                "text": "强烈推荐，美。。"
+            },
+            {
+                "text": "666"
+            },
+            {
+                "text": "惊呆了"
+            },
+            {
+                "text": "这是啥"
+            },
+            {
+                "text": "喜欢"
+            }
+        ];
+        for(var i = 0; i < barrageArr.length; i++){
+                var creSpan = '<div class="mb5 barrage-inner">' +
+                    '<span class="barrage-txt mr16">'+ barrageArr[i].text +'</span>' +
+                    '</div>';
+                barrageBox.prepend(creSpan);
+        }
+        var aniVal = 'barrage linear 6s infinite';
+        $('.zpg-barrage-content').css('animation',aniVal);
+
+        function getRandomColor(){
+            return '#' + (function(h){
+                    return new Array(7 - h.length).join("0") + h
+                })((Math.random() * 0x1000000 << 0).toString(16));
         }
     }
 
@@ -313,65 +360,6 @@ $(document).ready(function () {
 
     }
 
-    //弹幕
-    var barrageBox = $("#J_barrage_stage");
-    var barrageArr = [
-        {
-            "text": "我就是路过看看。。"
-        },
-        {
-            "text": "good"
-        },
-        {
-            "text": "赞赞赞"
-        },
-        {
-            "text": "还想再入一件"
-        },
-        {
-            "text": "强烈推荐，美。。"
-        },
-        {
-            "text": "666"
-        },
-        {
-            "text": "惊呆了"
-        },
-        {
-            "text": "这是啥"
-        },
-        {
-            "text": "摄影棚"
-        },
-        {
-            "text": "360°"
-        },
-        {
-            "text": "喜欢"
-        },
-        {
-            "text": "soga"
-        },
-        {
-            "text": "很满意"
-        },
-        {
-            "text": "☺"
-        }
-    ];
-    for(var i = 0; i < barrageArr.length -1; i++){
-        var creSpan = '<div class="mb5 barrage-inner">' +
-            '<span class="barrage-txt mr26">'+ barrageArr[i].text +'</span>' +
-        '</div>';
-        barrageBox.prepend(creSpan);
-    }
-
-
-    function getRandomColor(){
-        return '#' + (function(h){
-                return new Array(7 - h.length).join("0") + h
-            })((Math.random() * 0x1000000 << 0).toString(16));
-    }
 
     //滑动
     var winW = document.documentElement.clientWidth;
