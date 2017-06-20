@@ -329,7 +329,7 @@ $(document).ready(function () {
                     '</div>';
                 barrageBox.prepend(creSpan);
         }
-        var aniVal = 'barrage linear 6s infinite';
+        var aniVal = 'barrage linear 8s infinite';
         $('.zpg-barrage-content').css('animation',aniVal);
 
         function getRandomColor(){
