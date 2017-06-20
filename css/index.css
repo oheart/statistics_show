@@ -555,7 +555,6 @@ a {
     position: absolute;
     bottom: 0;
     left: 0;
-    border-top: 1px solid #E3E3E3;
 }
 .shop-chart-icon{
     width: 41px;
@@ -566,6 +565,7 @@ a {
     width: 20%;
     float: left;
     background: #FFF;
+    border-top: 1px solid #E3E3E3;
 }
 .add-shop-cart{
     width: 40%;
