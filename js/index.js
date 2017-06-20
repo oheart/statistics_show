@@ -176,8 +176,6 @@ $(document).ready(function () {
 
             }
 
-
-
             //弹幕
             var barrageBox = $("#J_barrage_stage");
             var barrageArr = [
@@ -268,7 +266,7 @@ $(document).ready(function () {
 
                             }
 
-                            imgHtml += "<img src="+" ' " + imgArray[i] +" ' curImgIndex=" + i + "> ";
+                            imgHtml += "<img class='product2_img' src="+" ' " + imgArray[i] +" ' curImgIndex=" + i + "> ";
                             imgHtml += "</div>";
 
                         }
@@ -401,6 +399,17 @@ $(document).ready(function () {
         }
         // 缩放和位移
         element.style[TRANSFORM] = 'scale(' + scale + ')';
+        if($(element).attr("class") == "current-image"){
+            $(".previous-image").css({
+                "webkit-transform":"scale(" + scale + ")",
+                "transform":"scale(" + scale + ")"
+            })
+        }else if($(element).attr("class") == "product2_img"){
+            $(".product2_img").css({
+                "webkit-transform":"scale(" + scale + ")",
+                "transform":"scale(" + scale + ")"
+            })
+        }
     }
     function oLisTouchStart(ev) {
 
