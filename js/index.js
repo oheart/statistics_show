@@ -3,12 +3,12 @@ $(document).ready(function () {
     var TRANSFORM = 'transform';
     (typeof document.body.style.webkitTransform !== undefined) ? TRANSFORM = 'webkitTransform' :void 0;
 
-    var distance = {}; //用于记住手势距离
-    var imgScale = 1;  //用于保存缩放值
-    var limitFlag = false;  //是否开启热点
-    var curImgIndex = 0; //第二图的显示索引
-    var imgArray;
-    var descList;
+    var distance = {};              //用于记住手势距离
+    var imgScale = 1;               //用于保存缩放值
+    var limitFlag = false;          //是否开启热点
+    var curImgIndex = 0;            //第二图的显示索引
+    var imgArray;                   //保存所有图片数组
+    var descList;                   //保存所有图片描述数组
     //从后台获取
     function showImagesWithId(workId){
 
@@ -29,6 +29,7 @@ $(document).ready(function () {
         });
     }
 
+    //判断是否为空
     function isEmpty(obj){
 
         for(var name in obj) {
@@ -161,7 +162,7 @@ $(document).ready(function () {
                     disableSpin: false,            // Default false
                     imgDescList: descList,
                     imgDesc: '.img_desc1',
-                    framerate: 400,
+                    framerate: 500,
                     imgArray: imgArray,
                     autoplayDirection:-1,
                     onReady: function(){
@@ -169,6 +170,9 @@ $(document).ready(function () {
                     },
                     onDragStart: function () {
                         product_1.stop();
+                    },
+                    onDragStop: function () {
+                        product_1.play();
                     }
                 });
 
@@ -208,7 +212,7 @@ $(document).ready(function () {
                 }
 
                 product2.innerHTML = imgHtml;
-                $(".img_desc2").text(descList[curImgIndex]);
+                $(".img_desc2").html(descList[curImgIndex]);
 
             }
 
@@ -327,7 +331,7 @@ $(document).ready(function () {
         return Math.sqrt(Math.pow((stop.x - start.x), 2) + Math.pow((stop.y - start.y), 2));
     }
 
-    function setScaleAnimation(element,scale, animation) {
+    function setScaleAnimation(element,scale) {
 
         if(scale<0.5){
              scale=0.5
@@ -335,6 +339,7 @@ $(document).ready(function () {
         // 缩放和位移
         element.style[TRANSFORM] = 'scale(' + scale + ')';
     }
+
     function oLisTouchStart(ev) {
 
         this.startX = ev.changedTouches[0].pageX;
@@ -429,7 +434,7 @@ $(document).ready(function () {
                         oDiv[curImgIndex].className = "slideImgDiv zIndex";
                         oDiv[curImgIndex].style.display = "block";
                         this.style.webkitTransform = "scale(" + (1 - Math.abs(changeX / winW)* step ) + ") translateX(0," + changeX + "px)";
-                        $(".img_desc2").text(descList[curImgIndex]);
+                        $(".img_desc2").html(descList[curImgIndex]);
 
                     }else if(changeX > 0){
                         curImgIndex = curImgIndex - 1;
@@ -448,7 +453,7 @@ $(document).ready(function () {
                         oDiv[curImgIndex].className = "slideImgDiv zIndex";
                         oDiv[curImgIndex].style.display = "block";
                         this.style.webkitTransform = "scale(" + (1 - Math.abs(changeX / winW)* step ) + ") translateX(0," + changeX + "px)";
-                        $(".img_desc2").text(descList[curImgIndex]);
+                        $(".img_desc2").html(descList[curImgIndex]);
                     }
 
                 }
@@ -465,7 +470,7 @@ $(document).ready(function () {
                     y: ev.touches[1].screenY
                 });
                 imgScale = distance.stop / distance.start;
-                setScaleAnimation(ev.target,imgScale, true);
+                setScaleAnimation(ev.target,imgScale);
             }
         }
 
@@ -487,7 +492,8 @@ $(document).ready(function () {
             }
         }else{
             imgScale = 1;
-            setScaleAnimation(ev.target,imgScale)
+            setScaleAnimation(ev.target,imgScale);
+
         }
 
 
