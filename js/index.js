@@ -216,13 +216,6 @@ $(document).ready(function () {
             var aniVal = 'barrage linear 8s infinite';
             $('.zpg-barrage-content').css('animation',aniVal);
 
-            function getRandomColor(){
-                return '#' + (function(h){
-                        return new Array(7 - h.length).join("0") + h
-                    })((Math.random() * 0x1000000 << 0).toString(16));
-            }
-
-
             //点击热点
             $(".swx-hot-spots").bind( "click", tapHotSpotsIcon);
 
